@@ -1,9 +1,9 @@
 ﻿# Projekt für das Modul 'Software- und IT-Management 2018' an der Uni Jena 
 
+![Cover](https://github.com/baekerei40/baekerei40/blob/master/Lastenheft/cover.PNG)
+
 ## 'Die Bäkerei 4.0' - Kurze Projektbeschreibung
 Schlankes ERP mit Controlling Funktionen in C#
-
-![Cover](https://github.com/baekerei40/baekerei40/Lastenheft/cover.PNG)
 
 ## Deadlines
 * Lastenheft: 7.5.18
