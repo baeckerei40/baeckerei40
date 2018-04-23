@@ -1,0 +1,8 @@
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\bin\Debug\baeckerei40_visualstudio.exe.config
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\bin\Debug\baeckerei40_visualstudio.exe
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\bin\Debug\baeckerei40_visualstudio.pdb
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\obj\Debug\baeckerei40_visualstudio.csprojResolveAssemblyReference.cache
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\obj\Debug\baeckerei40_visualstudio.Properties.Resources.resources
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\obj\Debug\baeckerei40_visualstudio.csproj.GenerateResource.Cache
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\obj\Debug\baeckerei40_visualstudio.exe
+C:\Users\Homaar\AppData\Local\Temporary Projects\baeckerei40_visualstudio\obj\Debug\baeckerei40_visualstudio.pdb
