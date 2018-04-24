@@ -9,5 +9,10 @@ Schlankes ERP mit Controlling Funktionen in C#
 * Lastenheft: 7.5.18
 * t.b.a
 
+## Meetings
+* 25.4. - 16 Uhr c.t. - PC Pool B - Erstellung Pflichtenheft
+* 26.4. - 12 Uhr s.t - Büro Stephan - Kundenbesprechung Pflichtenheft
+* t.b.a
+
 ## TODOs
 * t.b.a
