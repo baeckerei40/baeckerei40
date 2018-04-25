@@ -10,7 +10,7 @@ Schlankes ERP mit Controlling Funktionen in C#
 * t.b.a
 
 ## Meetings
-~~* 25.4. - 16 Uhr c.t. - PC Pool B - Erstellung Pflichtenheft~~
+* ~~25.4. - 16 Uhr c.t. - PC Pool B - Erstellung Pflichtenheft~~
 * 26.4. - 12 Uhr s.t - Büro Stephan - Kundenbesprechung Pflichtenheft
 * 03.5. - 16 Uhr c.t. - PC Pool B - Finalisierung Pflichtenheft
 * t.b.a
