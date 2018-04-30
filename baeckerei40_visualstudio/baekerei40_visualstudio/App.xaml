@@ -1,0 +1,6 @@
+﻿<Application x:Class="baeckerei40_visualstudio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:baeckerei40_visualstudio"
+             StartupUri="Login.xaml">
+</Application>
