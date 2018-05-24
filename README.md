@@ -2,7 +2,7 @@
 
 ![Cover](https://github.com/baekerei40/baekerei40/blob/master/Lastenheft/cover.PNG)
 
-## 'Die Bäkerei 4.0' - Kurze Projektbeschreibung
+## 'Die Bäckerei 4.0' - Kurze Projektbeschreibung
 Schlankes ERP mit Controlling Funktionen in C#
 
 ## Deadlines
