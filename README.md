@@ -21,3 +21,13 @@ Schlankes ERP mit Controlling Funktionen in C#
 * ERD
 * Klassendiagramme
 * fertiges Software-Projekt (inkl. DB-Scripts und Sourcecode)
+
+## Vorschlag bzgl Framework, MVC, etc.
+
+ASP Anwendung nach dem Microsoft Tutorial.
+
+* https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
+
+* https://www.mikesdotnetting.com/Article/241/MVC-5-with-EF-6-in-Visual-Basic-Creating-an-Entity-Framework-Data-Model
+
+Alternativ Windows Forms ohne MFC, wird aber häßlich.
