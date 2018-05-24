@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbmodel.edmx.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("baeckerei40dbmodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("baeckerei40dbmodel.edmx.sql")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbcontext.tt")]
 
 

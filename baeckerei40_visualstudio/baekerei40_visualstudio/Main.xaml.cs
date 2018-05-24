@@ -22,16 +22,7 @@ namespace baeckerei40
         public Main()
         {
             InitializeComponent();
-            this.DataContext = ActiveUser;
         }
-
-        // Benutzername
-        private SystemUser ActiveUser = new SystemUser();
-        public void setActiveUser(string username)
-        {
-            ActiveUser.Name = username;
-        }
-
 
         // Logik des linken Menus
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -83,39 +74,18 @@ namespace baeckerei40
         // Logout Button
         private void ButtonLogout_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Wollen Sie Bäckerei 4.0 wirklich verlassen?", "Bestätigen",
+            /*if (MessageBox.Show("Wollen Sie Bäckerei 4.0 wirklich verlassen?", "Bestätigen",
                 MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                this.Close();
-            }
+            }*/
+
+            this.Close();
 
         }
 
-        // Einstellungen Button
-        private void ButtonEinstellungen_Click(object sender, RoutedEventArgs e)
+        private void ButtonMaximize_Click(object sender, RoutedEventArgs e)
         {
-            UserControl usc = null;
-            GridMain.Children.Clear();
-            usc = new Einstellungen();
-            GridMain.Children.Add(usc);     
-        }
-
-        // Account Button
-        private void ButtonAccount_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GridMain.Children.Clear();
-            usc = new Account();
-            GridMain.Children.Add(usc);
-        }
-
-        // Hilfe Button
-        private void ButtonHilfe_Click(object sender, RoutedEventArgs e)
-        {
-            UserControl usc = null;
-            GridMain.Children.Clear();
-            usc = new Hilfe();
-            GridMain.Children.Add(usc);
+            Application.Current.MainWindow.WindowState = WindowState.Maximized;
         }
     }
 }

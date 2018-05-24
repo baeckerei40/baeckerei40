@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="baeckerei40dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Bestellung">
+    <Key>
+      <PropertyRef Name="BestellID" />
+    </Key>
+    <Property Name="BestellID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Abholdatum" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="KundenID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kunde">
+    <Key>
+      <PropertyRef Name="KundenID" />
+    </Key>
+    <Property Name="KundenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Vorname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nachname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telefonnummer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Adresse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PLZ" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Ort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produkte">
+    <Key>
+      <PropertyRef Name="ProduktID" />
+    </Key>
+    <Property Name="ProduktID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Produktname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Produktpreis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProdukteInBestellungen">
+    <Key>
+      <PropertyRef Name="BestellungEnthaeltID" />
+    </Key>
+    <Property Name="BestellungEnthaeltID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BestellMenge" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BestellID" Type="Int32" Nullable="false" />
+    <Property Name="ProduktID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rohstoffe">
+    <Key>
+      <PropertyRef Name="RohstoffID" />
+    </Key>
+    <Property Name="RohstoffID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rohstoffname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rohstoffeinheit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rohstoffpreis" Type="Double" Nullable="false" />
+    <Property Name="Lagermenge" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RohstoffeInProdukte">
+    <Key>
+      <PropertyRef Name="ProduktEnthaeltID" />
+    </Key>
+    <Property Name="ProduktEnthaeltID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RohstoffMenge" Type="Int32" Nullable="false" />
+    <Property Name="ProduktID" Type="Int32" Nullable="false" />
+    <Property Name="RohstoffID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_BestellungBestellungEnthaelt">
+    <End Role="Bestellungen" Type="baeckerei40dbModel.Bestellung" Multiplicity="1" />
+    <End Role="ProdukteInBestellungen" Type="Self.ProdukteInBestellungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bestellungen">
+        <PropertyRef Name="BestellID" />
+      </Principal>
+      <Dependent Role="ProdukteInBestellungen">
+        <PropertyRef Name="BestellID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_KundeBestellung">
+    <End Role="Kunden" Type="baeckerei40dbModel.Kunde" Multiplicity="1" />
+    <End Role="Bestellungen" Type="baeckerei40dbModel.Bestellung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kunden">
+        <PropertyRef Name="KundenID" />
+      </Principal>
+      <Dependent Role="Bestellungen">
+        <PropertyRef Name="KundenID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProduktBestellungEnthaelt">
+    <End Role="Produkte" Type="Self.Produkte" Multiplicity="1" />
+    <End Role="ProdukteInBestellungen" Type="Self.ProdukteInBestellungen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkte">
+        <PropertyRef Name="ProduktID" />
+      </Principal>
+      <Dependent Role="ProdukteInBestellungen">
+        <PropertyRef Name="ProduktID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProduktProduktEnthaelt">
+    <End Role="Produkte" Type="Self.Produkte" Multiplicity="1" />
+    <End Role="RohstoffeInProdukte" Type="Self.RohstoffeInProdukte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Produkte">
+        <PropertyRef Name="ProduktID" />
+      </Principal>
+      <Dependent Role="RohstoffeInProdukte">
+        <PropertyRef Name="ProduktID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RohstoffProduktEnthaelt">
+    <End Role="Rohstoffe" Type="Self.Rohstoffe" Multiplicity="1" />
+    <End Role="RohstoffeInProdukte" Type="Self.RohstoffeInProdukte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rohstoffe">
+        <PropertyRef Name="RohstoffID" />
+      </Principal>
+      <Dependent Role="RohstoffeInProdukte">
+        <PropertyRef Name="RohstoffID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Bestellungen" EntityType="baeckerei40dbModel.Bestellung" />
+    <EntitySet Name="Kunden" EntityType="baeckerei40dbModel.Kunde" />
+    <EntitySet Name="Produkte" EntityType="Self.Produkte" />
+    <EntitySet Name="ProdukteInBestellungen" EntityType="Self.ProdukteInBestellungen" />
+    <EntitySet Name="Rohstoffe" EntityType="Self.Rohstoffe" />
+    <EntitySet Name="RohstoffeInProdukte" EntityType="Self.RohstoffeInProdukte" />
+    <AssociationSet Name="FK_BestellungBestellungEnthaelt" Association="Self.FK_BestellungBestellungEnthaelt">
+      <End Role="Bestellungen" EntitySet="Bestellungen" />
+      <End Role="ProdukteInBestellungen" EntitySet="ProdukteInBestellungen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_KundeBestellung" Association="Self.FK_KundeBestellung">
+      <End Role="Kunden" EntitySet="Kunden" />
+      <End Role="Bestellungen" EntitySet="Bestellungen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProduktBestellungEnthaelt" Association="Self.FK_ProduktBestellungEnthaelt">
+      <End Role="Produkte" EntitySet="Produkte" />
+      <End Role="ProdukteInBestellungen" EntitySet="ProdukteInBestellungen" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProduktProduktEnthaelt" Association="Self.FK_ProduktProduktEnthaelt">
+      <End Role="Produkte" EntitySet="Produkte" />
+      <End Role="RohstoffeInProdukte" EntitySet="RohstoffeInProdukte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RohstoffProduktEnthaelt" Association="Self.FK_RohstoffProduktEnthaelt">
+      <End Role="Rohstoffe" EntitySet="Rohstoffe" />
+      <End Role="RohstoffeInProdukte" EntitySet="RohstoffeInProdukte" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

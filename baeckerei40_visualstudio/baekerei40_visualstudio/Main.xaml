@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:baeckerei40"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None" WindowState="Maximized">
+        mc:Ignorable="d" MinHeight="800" MinWidth="1000" Foreground="White" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <!--Animationen für linkes Menu-->
     <Window.Resources>
         <Storyboard x:Key="OpenMenu">
@@ -31,9 +31,9 @@
         </EventTrigger>
     </Window.Triggers>
     <!--Hauptgrid-->
-    <Grid Background="White">
+    <Grid Background="White" >
         <!--Inhaltsgrid-->
-        <Grid x:Name="GridMain" Margin="75,65,0,0">
+        <Grid x:Name="GridMain" Margin="75,65,0,0" HorizontalAlignment="Center">
             <Label x:Name="Text" Content="Bitte wählen Sie einen Funktionsbereich aus." HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Margin="20,25,0,0" Source="/images/cover.PNG"/>
         </Grid>
@@ -45,10 +45,11 @@
             <!--Menu oben rechts-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Width="150">
-                    <TextBlock Text="User: " FontSize="16"/>
+                    <!--<TextBlock Text="User: " FontSize="16"/>
                     <TextBlock Text="{Binding Name}" FontSize="16"/>
+                    -->
                 </StackPanel>
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" Margin="10">
+                <!-- <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" Margin="10">
                     <StackPanel Width="180" Background="White">
                         <Button Content="Einstellungen" Click="ButtonEinstellungen_Click" Width="180"/>
                         <Button Content="Account" Click="ButtonAccount_Click" Width="180"/>
@@ -56,6 +57,10 @@
                         <Separator/>
                     </StackPanel>
                 </materialDesign:PopupBox>
+                -->
+                <!--<Button x:Name="ButtonMaximize" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFFFF" Click="ButtonMaximize_Click">
+                    <materialDesign:PackIcon Kind="WindowMaximize" Width="25" Height="25"/>
+                </Button>-->
                 <Button x:Name="ButtonLogout" Height="60" Width="60" HorizontalAlignment="Right" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFFFFF" Click="ButtonLogout_Click">
                     <materialDesign:PackIcon Kind="logout" Width="25" Height="25"/>
                 </Button>
@@ -63,7 +68,7 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Bäckerei 4.0</TextBlock>
         </Grid>
         <!--Rechtes Band -->
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF31577E">
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF5C99D6">
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
@@ -88,31 +93,31 @@
                 <ListView x:Name="ListViewMenu" Foreground="#FF5C99D6" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="ItemBestellung" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Cart" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Cart" Height="25" Width="25" Margin="15"/>
                             <TextBlock Text="Bestellung" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemProduktion" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="CalendarText" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="CalendarText" Height="25" Width="25" Margin="15"/>
                             <TextBlock Text="Produktion" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemLager" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="Bank" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="Bank" Height="25" Width="25" Margin="15"/>
                             <TextBlock Text="Lager" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemKommissionierung" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ClipboardCheck" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="ClipboardCheck" Height="25" Width="25" Margin="15"/>
                             <TextBlock Text="Kommissionierung" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemControlling" Height="60">
                         <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="ChartAreaspline" Height="25" Width="25" Margin="10"/>
+                            <materialDesign:PackIcon Kind="ChartAreaspline" Height="25" Width="25" Margin="15"/>
                             <TextBlock Text="Controlling" VerticalAlignment="Center" Margin="20 10"/>
                         </StackPanel>
                     </ListViewItem>

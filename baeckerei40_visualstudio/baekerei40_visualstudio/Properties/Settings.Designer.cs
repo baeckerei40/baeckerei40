@@ -43,5 +43,16 @@ namespace baeckerei40.Properties {
                 return ((string)(this["baeckerei40ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TOBI-NB\\SQLEXPRESS;Initial Catalog=baeckerei40;Integrated Security=Tr" +
+            "ue;MultipleActiveResultSets=True;Application Name=EntityFramework")]
+        public string baeckerei40ConnectionString1 {
+            get {
+                return ((string)(this["baeckerei40ConnectionString1"]));
+            }
+        }
     }
 }

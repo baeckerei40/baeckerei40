@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c2a4a96db3b04564912bdcce5221d62d" Name="Diagram1">
+        <EntityTypeShape EntityType="baeckerei40dbModel.Bestellung" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="baeckerei40dbModel.Kunde" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="baeckerei40dbModel.Produkte" Width="1.5" PointX="5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="baeckerei40dbModel.ProdukteInBestellungen" Width="1.5" PointX="6.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="baeckerei40dbModel.Rohstoffe" Width="1.5" PointX="1.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="baeckerei40dbModel.RohstoffeInProdukte" Width="1.5" PointX="3.125" PointY="0.875" IsExpanded="true" />
+        <AssociationConnector Association="baeckerei40dbModel.FK_BestellungBestellungEnthaelt" ManuallyRouted="false" />
+        <AssociationConnector Association="baeckerei40dbModel.FK_KundeBestellung" ManuallyRouted="false" />
+        <AssociationConnector Association="baeckerei40dbModel.FK_ProduktBestellungEnthaelt" ManuallyRouted="false" />
+        <AssociationConnector Association="baeckerei40dbModel.FK_ProduktProduktEnthaelt" ManuallyRouted="false" />
+        <AssociationConnector Association="baeckerei40dbModel.FK_RohstoffProduktEnthaelt" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

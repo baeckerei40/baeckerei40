@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:baeckerei40"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid Background="White">
         <Label x:Name="Text" Content="Produktion" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <Image x:Name="image" HorizontalAlignment="Center" VerticalAlignment="Top" Width="280" Margin="20,25,0,0" Source="/images/cover.PNG"/>
+        <DataGrid x:Name="dataGridProduktion" ItemsSource="{Binding}" HorizontalAlignment="Left" SelectionChanged="dataGridProduktion_SelectionChanged" Margin="10,25,0,-25"/>
     </Grid>
 </UserControl>
