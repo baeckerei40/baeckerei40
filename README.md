@@ -17,7 +17,7 @@ Schlankes ERP mit Controlling Funktionen in C#
 
 ## Vorschlag bzgl Framework, MVC, etc.
 
-Wir machen einfach Windows Forms. Alles andere würde den Rahmen sprengen. Zudem haben mit Forms alle die möglichkeit mitzumachen, ohne sich zuerst in die Frameworks/Konzepte einarbeiten zu müssen...
+Wir machen einfach Windows Forms. Alles andere würde den Rahmen sprengen. Zudem haben mit Forms alle die Möglichkeit mitzumachen, ohne sich zuerst in die Frameworks/Konzepte einarbeiten zu müssen...
 
 ~~ASP Anwendung nach dem Microsoft Tutorial.~~
 
