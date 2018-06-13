@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
@@ -13,75 +14,62 @@ namespace baeckerei40_forms
 {
     public partial class baeckerei40 : Form
     {
-        private OleDbDataAdapter da;
-        private DataSet ds;
 
         public baeckerei40()
         {
             InitializeComponent();
-            fillGrid();
         }
 
-        public void fillGrid()
+        private void buttonHinzufuegen_Click(object sender, EventArgs e)
         {
-            // Daten lesen:
-            OleDbConnection conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0; Data Source=baeckerei40.mdb;");
-            OleDbCommand cmd = new OleDbCommand("SELECT * FROM Kunden;", conn);
-            da = new OleDbDataAdapter(cmd);
-            OleDbCommandBuilder cb = new OleDbCommandBuilder(da);
-            DataSet ds = new DataSet("Kunden");
-            da.Fill(ds, "Kunden");
-            DataTable KundenTable = ds.Tables["Kunden"];
+            try
+            {
+                Kunde k = new Kunde();
 
-            List<Kunde> list = new List<Kunde>();
-
-
-
-            dataGridKundenliste.DataSource = KundenTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hinzufügen fehlgeschlagen.\n" + ex.Message);
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void dataGridKundenliste_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            textBoxKundennummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxVorname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxNachname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonBearbeiten_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox5_Enter(object sender, EventArgs e)
-        {
-
+            try
+            {
+                this.Validate();
+                this.dataGridKundenliste.EndEdit();
+                this.kundenTableAdapter.Update(this.baeckerei40DataSet.Kunden);
+                MessageBox.Show("Update successful");
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("Update failed");
+            }
         }
 
         private void dataGridKundenliste_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+        }
+
+        private void baeckerei40_Load(object sender, EventArgs e)
+        {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.BestellungEnthaelt". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.Bestellungen". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.Produkte". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.produkteTableAdapter.Fill(this.baeckerei40DataSet.Produkte);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.Kunden". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.kundenTableAdapter.Fill(this.baeckerei40DataSet.Kunden);
 
         }
     }

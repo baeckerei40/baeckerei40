@@ -8,5 +8,10 @@ namespace baeckerei40_forms
 {
     class Produkt
     {
+        public String ProduktID { get; set; }
+        public String Produktname{ get; set; }
+        public Double ProduktPreis { get; set; }
+        public Boolean produziert { get; set; }
+
     }
 }

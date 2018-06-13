@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace baeckerei40_forms
 {
-    class Rolle
+    public abstract class Person
     {
-        public int RollenID { get; set; }
-        public String RollenName { get; set; }
+        public String Vorname { get; set; }
+        public String Nachname{ get; set; }
     }
 }

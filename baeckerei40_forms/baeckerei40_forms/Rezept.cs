@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace baeckerei40_forms
 {
-    class Rolle
+    class Rezept
     {
-        public int RollenID { get; set; }
-        public String RollenName { get; set; }
+        public String RezeptID { get; set; }
+        List<Rohstoff> Rohstoffe { get; set; }
+        List<Double> MengeRohstoffe { get; set; }
+
+
     }
 }
