@@ -36,6 +36,8 @@ namespace baeckerei40_forms {
         
         private RohstoffeDataTable tableRohstoffe;
         
+        private MitarbeiterDataTable tableMitarbeiter;
+        
         private global::System.Data.DataRelation relationKundenBestellungen;
         
         private global::System.Data.DataRelation relationBestellungenPodukteInBestellungen;
@@ -91,6 +93,9 @@ namespace baeckerei40_forms {
                 }
                 if ((ds.Tables["Rohstoffe"] != null)) {
                     base.Tables.Add(new RohstoffeDataTable(ds.Tables["Rohstoffe"]));
+                }
+                if ((ds.Tables["Mitarbeiter"] != null)) {
+                    base.Tables.Add(new MitarbeiterDataTable(ds.Tables["Mitarbeiter"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -167,6 +172,16 @@ namespace baeckerei40_forms {
         public RohstoffeDataTable Rohstoffe {
             get {
                 return this.tableRohstoffe;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public MitarbeiterDataTable Mitarbeiter {
+            get {
+                return this.tableMitarbeiter;
             }
         }
         
@@ -255,6 +270,9 @@ namespace baeckerei40_forms {
                 if ((ds.Tables["Rohstoffe"] != null)) {
                     base.Tables.Add(new RohstoffeDataTable(ds.Tables["Rohstoffe"]));
                 }
+                if ((ds.Tables["Mitarbeiter"] != null)) {
+                    base.Tables.Add(new MitarbeiterDataTable(ds.Tables["Mitarbeiter"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -324,6 +342,12 @@ namespace baeckerei40_forms {
                     this.tableRohstoffe.InitVars();
                 }
             }
+            this.tableMitarbeiter = ((MitarbeiterDataTable)(base.Tables["Mitarbeiter"]));
+            if ((initTable == true)) {
+                if ((this.tableMitarbeiter != null)) {
+                    this.tableMitarbeiter.InitVars();
+                }
+            }
             this.relationKundenBestellungen = this.Relations["KundenBestellungen"];
             this.relationBestellungenPodukteInBestellungen = this.Relations["BestellungenPodukteInBestellungen"];
             this.relationProduktePodukteInBestellungen = this.Relations["ProduktePodukteInBestellungen"];
@@ -351,6 +375,8 @@ namespace baeckerei40_forms {
             base.Tables.Add(this.tableProduktEnthaelt);
             this.tableRohstoffe = new RohstoffeDataTable();
             base.Tables.Add(this.tableRohstoffe);
+            this.tableMitarbeiter = new MitarbeiterDataTable();
+            base.Tables.Add(this.tableMitarbeiter);
             this.relationKundenBestellungen = new global::System.Data.DataRelation("KundenBestellungen", new global::System.Data.DataColumn[] {
                         this.tableKunden.KundenIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableBestellungen.KundenIDColumn}, false);
@@ -406,6 +432,12 @@ namespace baeckerei40_forms {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeRohstoffe() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeMitarbeiter() {
             return false;
         }
         
@@ -481,6 +513,9 @@ namespace baeckerei40_forms {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void RohstoffeRowChangeEventHandler(object sender, RohstoffeRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void MitarbeiterRowChangeEventHandler(object sender, MitarbeiterRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -804,6 +839,8 @@ namespace baeckerei40_forms {
             
             private global::System.Data.DataColumn columnBestellMenge;
             
+            private global::System.Data.DataColumn columnProduziert;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BestellungEnthaeltDataTable() {
@@ -871,6 +908,14 @@ namespace baeckerei40_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProduziertColumn {
+                get {
+                    return this.columnProduziert;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -906,13 +951,14 @@ namespace baeckerei40_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BestellungEnthaeltRow AddBestellungEnthaeltRow(BestellungenRow parentBestellungenRowByBestellungenPodukteInBestellungen, ProdukteRow parentProdukteRowByProduktePodukteInBestellungen, int BestellMenge) {
+            public BestellungEnthaeltRow AddBestellungEnthaeltRow(BestellungenRow parentBestellungenRowByBestellungenPodukteInBestellungen, ProdukteRow parentProdukteRowByProduktePodukteInBestellungen, int BestellMenge, bool Produziert) {
                 BestellungEnthaeltRow rowBestellungEnthaeltRow = ((BestellungEnthaeltRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
-                        BestellMenge};
+                        BestellMenge,
+                        Produziert};
                 if ((parentBestellungenRowByBestellungenPodukteInBestellungen != null)) {
                     columnValuesArray[1] = parentBestellungenRowByBestellungenPodukteInBestellungen[0];
                 }
@@ -952,6 +998,7 @@ namespace baeckerei40_forms {
                 this.columnBestellID = base.Columns["BestellID"];
                 this.columnProduktID = base.Columns["ProduktID"];
                 this.columnBestellMenge = base.Columns["BestellMenge"];
+                this.columnProduziert = base.Columns["Produziert"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -965,6 +1012,8 @@ namespace baeckerei40_forms {
                 base.Columns.Add(this.columnProduktID);
                 this.columnBestellMenge = new global::System.Data.DataColumn("BestellMenge", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBestellMenge);
+                this.columnProduziert = new global::System.Data.DataColumn("Produziert", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProduziert);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnBestellungEnthaeltID}, true));
                 this.columnBestellungEnthaeltID.AutoIncrement = true;
@@ -2383,6 +2432,278 @@ namespace baeckerei40_forms {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class MitarbeiterDataTable : global::System.Data.TypedTableBase<MitarbeiterRow> {
+            
+            private global::System.Data.DataColumn columnMitarbeiterID;
+            
+            private global::System.Data.DataColumn columnPasswort;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterDataTable() {
+                this.TableName = "Mitarbeiter";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MitarbeiterDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected MitarbeiterDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MitarbeiterIDColumn {
+                get {
+                    return this.columnMitarbeiterID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PasswortColumn {
+                get {
+                    return this.columnPasswort;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRow this[int index] {
+                get {
+                    return ((MitarbeiterRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MitarbeiterRowChangeEventHandler MitarbeiterRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MitarbeiterRowChangeEventHandler MitarbeiterRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MitarbeiterRowChangeEventHandler MitarbeiterRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event MitarbeiterRowChangeEventHandler MitarbeiterRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddMitarbeiterRow(MitarbeiterRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRow AddMitarbeiterRow(string MitarbeiterID, string Passwort) {
+                MitarbeiterRow rowMitarbeiterRow = ((MitarbeiterRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        MitarbeiterID,
+                        Passwort};
+                rowMitarbeiterRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowMitarbeiterRow);
+                return rowMitarbeiterRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRow FindByMitarbeiterID(string MitarbeiterID) {
+                return ((MitarbeiterRow)(this.Rows.Find(new object[] {
+                            MitarbeiterID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                MitarbeiterDataTable cln = ((MitarbeiterDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new MitarbeiterDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnMitarbeiterID = base.Columns["MitarbeiterID"];
+                this.columnPasswort = base.Columns["Passwort"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnMitarbeiterID = new global::System.Data.DataColumn("MitarbeiterID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMitarbeiterID);
+                this.columnPasswort = new global::System.Data.DataColumn("Passwort", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPasswort);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("MitarbeiterKey1", new global::System.Data.DataColumn[] {
+                                this.columnMitarbeiterID}, true));
+                this.columnMitarbeiterID.AllowDBNull = false;
+                this.columnMitarbeiterID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRow NewMitarbeiterRow() {
+                return ((MitarbeiterRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new MitarbeiterRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(MitarbeiterRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.MitarbeiterRowChanged != null)) {
+                    this.MitarbeiterRowChanged(this, new MitarbeiterRowChangeEvent(((MitarbeiterRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.MitarbeiterRowChanging != null)) {
+                    this.MitarbeiterRowChanging(this, new MitarbeiterRowChangeEvent(((MitarbeiterRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.MitarbeiterRowDeleted != null)) {
+                    this.MitarbeiterRowDeleted(this, new MitarbeiterRowChangeEvent(((MitarbeiterRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.MitarbeiterRowDeleting != null)) {
+                    this.MitarbeiterRowDeleting(this, new MitarbeiterRowChangeEvent(((MitarbeiterRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveMitarbeiterRow(MitarbeiterRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                baeckerei40DataSet ds = new baeckerei40DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "MitarbeiterDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class BestellungenRow : global::System.Data.DataRow {
@@ -2589,6 +2910,22 @@ namespace baeckerei40_forms {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Produziert {
+                get {
+                    try {
+                        return ((bool)(this[this.tableBestellungEnthaelt.ProduziertColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Produziert in Tabelle BestellungEnthaelt ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBestellungEnthaelt.ProduziertColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public BestellungenRow BestellungenRow {
                 get {
                     return ((BestellungenRow)(this.GetParentRow(this.Table.ParentRelations["BestellungenPodukteInBestellungen"])));
@@ -2643,6 +2980,18 @@ namespace baeckerei40_forms {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetBestellMengeNull() {
                 this[this.tableBestellungEnthaelt.BestellMengeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProduziertNull() {
+                return this.IsNull(this.tableBestellungEnthaelt.ProduziertColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProduziertNull() {
+                this[this.tableBestellungEnthaelt.ProduziertColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3265,6 +3614,60 @@ namespace baeckerei40_forms {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class MitarbeiterRow : global::System.Data.DataRow {
+            
+            private MitarbeiterDataTable tableMitarbeiter;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal MitarbeiterRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableMitarbeiter = ((MitarbeiterDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string MitarbeiterID {
+                get {
+                    return ((string)(this[this.tableMitarbeiter.MitarbeiterIDColumn]));
+                }
+                set {
+                    this[this.tableMitarbeiter.MitarbeiterIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Passwort {
+                get {
+                    try {
+                        return ((string)(this[this.tableMitarbeiter.PasswortColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Der Wert für Spalte Passwort in Tabelle Mitarbeiter ist DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMitarbeiter.PasswortColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPasswortNull() {
+                return this.IsNull(this.tableMitarbeiter.PasswortColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPasswortNull() {
+                this[this.tableMitarbeiter.PasswortColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -3467,6 +3870,40 @@ namespace baeckerei40_forms {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class MitarbeiterRowChangeEvent : global::System.EventArgs {
+            
+            private MitarbeiterRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRowChangeEvent(MitarbeiterRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public MitarbeiterRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace baeckerei40_forms.baeckerei40DataSetTableAdapters {
@@ -3652,18 +4089,11 @@ namespace baeckerei40_forms.baeckerei40DataSetTableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"UPDATE `Bestellungen` SET `KundenID` = ?, `Abholdatum` = ?, `Abholzeit` = ? WHERE ((`BestellID` = ?) AND ((? = 1 AND `KundenID` IS NULL) OR (`KundenID` = ?)) AND ((? = 1 AND `Abholdatum` IS NULL) OR (`Abholdatum` = ?)) AND ((? = 1 AND `Abholzeit` IS NULL) OR (`Abholzeit` = ?)))";
+            this._commandCollection[1].CommandText = @"SELECT        BestellungEnthaelt.BestellungEnthaeltID, BestellungEnthaelt.BestellID, BestellungEnthaelt.ProduktID, BestellungEnthaelt.BestellMenge, Bestellungen.KundenID, Bestellungen.Abholdatum, 
+                         Bestellungen.Abholzeit
+FROM            (BestellungEnthaelt INNER JOIN
+                         Bestellungen ON BestellungEnthaelt.BestellID = Bestellungen.BestellID)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("KundenID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "KundenID", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Abholdatum", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Abholdatum", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Abholzeit", global::System.Data.OleDb.OleDbType.WChar, 255, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Abholzeit", global::System.Data.DataRowVersion.Current, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BestellID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BestellID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BestellID1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BestellID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BestellID2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BestellID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BestellID3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BestellID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_BestellID4", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "BestellID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_KundenID", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "KundenID", global::System.Data.DataRowVersion.Original, false, null));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_KundenID1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "KundenID", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3685,6 +4115,30 @@ namespace baeckerei40_forms.baeckerei40DataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual baeckerei40DataSet.BestellungenDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            baeckerei40DataSet.BestellungenDataTable dataTable = new baeckerei40DataSet.BestellungenDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillJoin(baeckerei40DataSet.BestellungenDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual baeckerei40DataSet.BestellungenDataTable getDataJoin() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             baeckerei40DataSet.BestellungenDataTable dataTable = new baeckerei40DataSet.BestellungenDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3866,64 +4320,6 @@ namespace baeckerei40_forms.baeckerei40DataSetTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(global::System.Nullable<int> KundenID, global::System.Nullable<global::System.DateTime> Abholdatum, string Abholzeit, int Original_BestellID, int Original_BestellID1, int Original_BestellID2, int Original_BestellID3, int Original_BestellID4, global::System.Nullable<int> Original_KundenID, global::System.Nullable<int> Original_KundenID1) {
-            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[1];
-            if ((KundenID.HasValue == true)) {
-                command.Parameters[0].Value = ((int)(KundenID.Value));
-            }
-            else {
-                command.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((Abholdatum.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(Abholdatum.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((Abholzeit == null)) {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Abholzeit));
-            }
-            command.Parameters[3].Value = ((int)(Original_BestellID));
-            command.Parameters[4].Value = ((int)(Original_BestellID1));
-            command.Parameters[5].Value = ((int)(Original_BestellID2));
-            command.Parameters[6].Value = ((int)(Original_BestellID3));
-            command.Parameters[7].Value = ((int)(Original_BestellID4));
-            if ((Original_KundenID.HasValue == true)) {
-                command.Parameters[8].Value = ((int)(Original_KundenID.Value));
-            }
-            else {
-                command.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((Original_KundenID1.HasValue == true)) {
-                command.Parameters[9].Value = ((int)(Original_KundenID1.Value));
-            }
-            else {
-                command.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
         }
     }
     

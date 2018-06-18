@@ -17,3 +17,4 @@ E:\win_git\baeckerei40\baeckerei40_forms\baeckerei40_forms\obj\Debug\baeckerei40
 E:\win_git\baeckerei40\baeckerei40_forms\baeckerei40_forms\bin\Debug\baeckerei40_forms.exe
 E:\win_git\baeckerei40\baeckerei40_forms\baeckerei40_forms\bin\Debug\baeckerei40_forms.pdb
 E:\win_git\baeckerei40\baeckerei40_forms\baeckerei40_forms\bin\Debug\baeckerei40.mdb
+E:\win_git\baeckerei40\baeckerei40_forms\baeckerei40_forms\obj\Debug\baeckerei40_forms.Login.resources

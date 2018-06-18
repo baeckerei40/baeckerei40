@@ -16,7 +16,7 @@ namespace baeckerei40_forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new baeckerei40());
+            Application.Run(new Login());
         }
     }
 }

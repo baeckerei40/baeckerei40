@@ -4,6 +4,9 @@
 
     partial class baeckerei40DataSet
     {
+        partial class MitarbeiterDataTable
+        {
+        }
     }
 }
 
