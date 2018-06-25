@@ -6,7 +6,7 @@
 Schlankes ERP mit Controlling Funktionen in C#
 
 ## Deadlines
-* ~~Meilenstein 1 - Lastenheft: 7.5. ~~
+* ~~Meilenstein 1 - Lastenheft: 7.5.~~
 * ~~Meilenstein 2 - EPK und Klassendiagramm: 11.6.~~
 * Meilenstein 3 - Fertige Software: 15.8.
 
@@ -46,8 +46,10 @@ Um unsere Änderungen im Visual Studio hochzuladen verwenden wir am besten:
 * https://tortoisegit.org/
 
 ###Workflow:
-* Rechtsklick -> Git commit "master" -> Alle Dateien auswählen -> Commit-Nachricht eingeben -> Commit
+* Rechtsklick -> Git commit "master" -> Alle Dateien auswählen -> Commit-Nachricht eingeben -> Commit  
+
 ![Git-Workflow-1](git-workflow-1.PNG)
 
-* Push
+* Push  
+
 ![Git-Workflow-2](git-workflow-2.PNG)
