@@ -19,7 +19,7 @@ namespace baeckerei40_forms
         {
             InitializeComponent();
             labelBenutzer.Text = "Benutzer: " + m.Benutzername;
-            //Zeige Tabs nach Berechtigung
+            //Zeige Tabs je nach Berechtigung
             switch (m.Benutzername)
             {
                 case "Manager":                    
@@ -84,7 +84,9 @@ namespace baeckerei40_forms
 
         private void baeckerei40_Load(object sender, EventArgs e)
         {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.BestellungEnthaelt". Sie können sie bei Bedarf verschieben oder entfernen.
             this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "baeckerei40DataSet.Bestellungen". Sie können sie bei Bedarf verschieben oder entfernen.
             this.bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
             this.produkteTableAdapter.Fill(this.baeckerei40DataSet.Produkte);
             this.kundenTableAdapter.Fill(this.baeckerei40DataSet.Kunden);
@@ -100,16 +102,35 @@ namespace baeckerei40_forms
                 this.bestellungenTableAdapter.Update(this.baeckerei40DataSet.Bestellungen);
                 MessageBox.Show("Update successful");
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Update failed\n" + ex);
             }
         }
 
+        private void buttonWarenkorbHinzufuegen_Click(object sender, EventArgs e)
+        {
+            Produkt p = new Produkt();
+            try
+            {
+                var cellIndex = dataGridViewProduktliste.SelectedCells[0].RowIndex;
+                var cellCollection = dataGridViewProduktliste.Rows[cellIndex].Cells[0];
+
+                p.ProduktID = (int)dataGridViewProduktliste.Rows[cellIndex].Cells[0].Value;
+                p.Produktname = (string)dataGridViewProduktliste.Rows[cellIndex].Cells[1].Value;
+                this.listBoxWarenkorb.Items.Add(p.ProduktID.ToString() + " " + p.Produktname.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kein Produkt ausgewählt. \n" + ex);
+            }
+        }
+
         private void baeckerei40_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //End all Forms (also hidden Login Form)
+            //Alle Forms beenden (auch Login)
             Environment.Exit(0);
         }
+
     }
 }

@@ -42,7 +42,10 @@ namespace baeckerei40_forms
         {
             //Hier könnte der Datenbank zugriff für einen Check stehen.
             //Das Passwort sollte eigentlich gehasht werden, etc. -> nicht teil der Veranstaltung
-            return true;
+            if (user == "Manager" | user == "Bäcker" | user == "Verkauf")
+                return true;
+            else
+                return false;
         }
     }
 
