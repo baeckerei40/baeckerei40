@@ -45,7 +45,7 @@ Schlankes ERP mit Controlling Funktionen in C#
 Um unsere Änderungen im Visual Studio hochzuladen verwenden wir am besten:
 * https://tortoisegit.org/
 
-###Workflow:
+### Workflow:
 * Rechtsklick -> Git commit "master" -> Alle Dateien auswählen -> Commit-Nachricht eingeben -> Commit  
 
 ![Git-Workflow-1](git-workflow-1.PNG)
