@@ -6,23 +6,48 @@
 Schlankes ERP mit Controlling Funktionen in C#
 
 ## Deadlines
-* ~~Meilenstein 1 - Lastenheft: 7.5.18~~
-* Meilenstein 2 - EPK und Klassendiagramm: 11.06.18
-* Meilenstein 3 Fertige Software: Ende des Semesters
+* ~~Meilenstein 1 - Lastenheft: 7.5. ~~
+* ~~Meilenstein 2 - EPK und Klassendiagramm: 11.6.~~
+* Meilenstein 3 - Fertige Software: 15.8.
 
 ## Meetings
 * ~~25.4. - 16 Uhr c.t. - PC Pool B - Erstellung Pflichtenheft~~
 * ~~26.4. - 12 Uhr s.t - Büro Stephan - Kundenbesprechung Pflichtenheft~~
 * ~~02.5. - 16 Uhr c.t. - PC Pool B - Finalisierung Pflichtenheft~~
+* 26.6. - 16 Uhr c.t. - PC Pool C - Abstimmung bzgl. Programmierung / Aufgabenteilung
+* 15.8. - t.b.a - Stefan Büro - Abgabe / Software mit Stefan kurz durchklicken und besprechen
 
-## Vorschlag bzgl Framework, MVC, etc.
+## Arbeitsteilung
 
-Wir machen einfach Windows Forms. Alles andere würde den Rahmen sprengen. Zudem haben mit Forms alle die Möglichkeit mitzumachen, ohne sich zuerst in die Frameworks/Konzepte einarbeiten zu müssen...
+### Meilenstein 1
+* Lastenheft: Artur, Jann, Sophie, Selest, Tobias
 
-~~ASP Anwendung nach dem Microsoft Tutorial.~~
+### Meilenstein 2
+* EPK: Artur, Jann, Selest
+* Klassendiagramm: Sophie, Tobias
+* Zusammenführung als Word: Tobias
 
-~~* https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application~~
+### Meilenstein 3
+* Tab Bestellung: Tobias
+* Tab Produktion: Tobias
+* Tab Lager: 
+* Tab Komissionierung:
+* Tab Rohstoffe:
+* Tab Controlling:
+* Erstellung der Access-DB + ERD: Tobias
+* Erstellung GUI-Konzept: Tobias
 
-~~* https://www.mikesdotnetting.com/Article/241/MVC-5-with-EF-6-in-Visual-Basic-Creating-an-Entity-Framework-Data-Model~~
+### sonstiges
+* Kommunikarion mit Projekt Owner: Sophie
+* git Administration: Tobias
 
-~~Alternativ Windows Forms ohne MFC, wird aber häßlich.~~
+## Git Client
+Um unsere Änderungen im Visual Studio hochzuladen verwenden wir am besten:
+* https://tortoisegit.org/
+
+###Workflow:
+* Rechtsklick -> Git commit "master" -> Alle Dateien auswählen -> Commit-Nachricht eingeben -> Commit
+![Git-Workflow-1](git-workflow-1.PNG)
+
+* Push
+![Git-Workflow-2](git-workflow-2.PNG)
