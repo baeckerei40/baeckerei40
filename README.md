@@ -14,7 +14,8 @@ Schlankes ERP mit Controlling Funktionen in C#
 * ~~25.4. - 16 Uhr c.t. - PC Pool B - Erstellung Pflichtenheft~~
 * ~~26.4. - 12 Uhr s.t - Büro Stephan - Kundenbesprechung Pflichtenheft~~
 * ~~02.5. - 16 Uhr c.t. - PC Pool B - Finalisierung Pflichtenheft~~
-* 26.6. - 16 Uhr c.t. - PC Pool C - Abstimmung bzgl. Programmierung / Aufgabenteilung
+* ~~26.6. - 16 Uhr c.t. - PC Pool C - Abstimmung bzgl. Programmierung / Aufgabenteilung~~
+* 12.6. - nach der Klausur - SR 306 - Status Treffen
 * 01.8. - t.b.a - Stefan Büro - Abgabe / Software mit Stefan kurz durchklicken und besprechen
 
 ## Arbeitsteilung
