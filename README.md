@@ -31,9 +31,9 @@ Schlankes ERP mit Controlling Funktionen in C#
 ### Meilenstein 3
 * Tab Bestellung: Tobias
 * Tab Produktion: Tobias
-* Tab Lager: 
+* Tab Lager: Selest, Artur, Sophie
 * Tab Komissionierung:
-* Tab Rohstoffe:
+* Tab Rohstoffe:-> wird zu Rezeptverwaltung: Selest, Artur, Sophie
 * Tab Controlling:
 * Erstellung der Access-DB + ERD: Tobias
 * Erstellung GUI-Konzept: Tobias
