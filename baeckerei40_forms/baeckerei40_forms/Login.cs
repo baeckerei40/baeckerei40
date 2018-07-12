@@ -47,6 +47,16 @@ namespace baeckerei40_forms
             else
                 return false;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxBeschreibung_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

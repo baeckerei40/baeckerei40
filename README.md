@@ -37,6 +37,7 @@ Schlankes ERP mit Controlling Funktionen in C#
 * Tab Controlling:
 * Erstellung der Access-DB + ERD: Tobias
 * Erstellung GUI-Konzept: Tobias
+* Login: Tobias
 
 ### sonstiges
 * Kommunikarion mit Projekt Owner: Sophie
