@@ -33,9 +33,9 @@ Schlankes ERP mit Controlling Funktionen in C#
 * Tab Bestellung: Tobias
 * Tab Produktion: Tobias
 * Tab Lager: Selest, Artur, Sophie
-* Tab Komissionierung:
-* Tab Rohstoffe:-> wird zu Rezeptverwaltung: Selest, Artur, Sophie
-* Tab Controlling:
+* Tab Komissionierung: Selest, Artur, Sophie, Jann
+* Tab Rohstoffe:-> wird zu Rezeptverwaltung: Selest, Artur, Sophie, Jann
+* Tab Controlling: wird gelöscht
 * Erstellung der Access-DB + ERD: Tobias
 * Erstellung GUI-Konzept: Tobias
 * Login: Tobias
