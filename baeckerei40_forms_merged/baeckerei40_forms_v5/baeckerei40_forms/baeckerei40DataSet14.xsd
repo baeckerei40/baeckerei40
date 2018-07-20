@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="baeckerei40DataSet14" targetNamespace="http://tempuri.org/baeckerei40DataSet14.xsd" xmlns:mstns="http://tempuri.org/baeckerei40DataSet14.xsd" xmlns="http://tempuri.org/baeckerei40DataSet14.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="baeckerei40ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="baeckerei40ConnectionString (Settings)" PropertyReference="ApplicationSettings.baeckerei40_forms.Properties.Settings.GlobalReference.Default.baeckerei40ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BestellungenTableAdapter" GeneratorDataComponentClassName="BestellungenTableAdapter" Name="Bestellungen" UserDataComponentName="BestellungenTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="baeckerei40ConnectionString (Settings)" DbObjectName="Bestellungen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Gesamtpreis (in €)] FROM Bestellungen</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Gesamtpreis (in €)" DataSetColumn="Gesamtpreis (in €)" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="baeckerei40DataSet14" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="baeckerei40DataSet14" msprop:Generator_UserDSName="baeckerei40DataSet14">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bestellungen" msprop:Generator_TableClassName="BestellungenDataTable" msprop:Generator_TableVarName="tableBestellungen" msprop:Generator_TablePropName="Bestellungen" msprop:Generator_RowDeletingName="BestellungenRowDeleting" msprop:Generator_RowChangingName="BestellungenRowChanging" msprop:Generator_RowEvHandlerName="BestellungenRowChangeEventHandler" msprop:Generator_RowDeletedName="BestellungenRowDeleted" msprop:Generator_UserTableName="Bestellungen" msprop:Generator_RowChangedName="BestellungenRowChanged" msprop:Generator_RowEvArgName="BestellungenRowChangeEvent" msprop:Generator_RowClassName="BestellungenRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Gesamtpreis_x0020__x0028_in_x0020__x20AC__x0029_" msprop:Generator_ColumnVarNameInTable="_columnGesamtpreis__in___" msprop:Generator_ColumnPropNameInRow="_Gesamtpreis__in___" msprop:Generator_ColumnPropNameInTable="_Gesamtpreis__in___Column" msprop:Generator_UserColumnName="Gesamtpreis (in €)" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

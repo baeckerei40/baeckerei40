@@ -47,13 +47,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bestellungEnthaeltIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produktIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellMengeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produziertDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bestellungEnthaeltBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.baeckerei40DataSet = new baeckerei40_forms.baeckerei40DataSet();
             this.buttonProduktionSpeichern = new System.Windows.Forms.Button();
             this.tabPageBestellung = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -61,11 +54,6 @@
             this.KundenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kundenIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abholdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abholzeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBestelllisteSpeichern = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.labelGesamtpreis = new System.Windows.Forms.Label();
@@ -82,25 +70,11 @@
             this.dateTimePickerAbholdatum = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridViewProduktliste = new System.Windows.Forms.DataGridView();
-            this.produktIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produktNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produktPreisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.produkteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonKundenlisteChange = new System.Windows.Forms.Button();
-            this.buttonHinzufügen = new System.Windows.Forms.Button();
-            this.buttonBearbeiten = new System.Windows.Forms.Button();
+            this.buttonKundeHinzufügen = new System.Windows.Forms.Button();
+            this.buttonKundeBearbeiten = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.dataGridKundenliste = new System.Windows.Forms.DataGridView();
-            this.kundenIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nachnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pLZDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kundenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxKundennummer = new System.Windows.Forms.TextBox();
             this.labelKundennummer = new System.Windows.Forms.Label();
             this.textBoxTelefonnummer = new System.Windows.Forms.TextBox();
@@ -110,6 +84,31 @@
             this.textBoxVorname = new System.Windows.Forms.TextBox();
             this.labelVorname = new System.Windows.Forms.Label();
             this.tabControlWrapper = new System.Windows.Forms.TabControl();
+            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kundenIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abholdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abholzeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.baeckerei40DataSet = new baeckerei40_forms.baeckerei40DataSet();
+            this.produktIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produktNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produktPreisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produkteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kundenIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vornameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nachnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pLZDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ortDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kundenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bestellungEnthaeltIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produktIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellMengeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.produziertDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bestellungEnthaeltBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kundenTableAdapter = new baeckerei40_forms.baeckerei40DataSetTableAdapters.KundenTableAdapter();
             this.produkteTableAdapter = new baeckerei40_forms.baeckerei40DataSetTableAdapters.ProdukteTableAdapter();
             this.bestellungenTableAdapter = new baeckerei40_forms.baeckerei40DataSetTableAdapters.BestellungenTableAdapter();
@@ -121,21 +120,21 @@
             this.tabPageProduktion.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).BeginInit();
             this.tabPageBestellung.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produkteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridKundenliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).BeginInit();
             this.tabControlWrapper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produkteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // labelBenutzer
@@ -326,46 +325,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(958, 282);
             this.dataGridView1.TabIndex = 0;
             // 
-            // bestellungEnthaeltIDDataGridViewTextBoxColumn
-            // 
-            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.DataPropertyName = "BestellungEnthaeltID";
-            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.HeaderText = "BestellungEnthaeltID";
-            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.Name = "bestellungEnthaeltIDDataGridViewTextBoxColumn";
-            // 
-            // bestellIDDataGridViewTextBoxColumn1
-            // 
-            this.bestellIDDataGridViewTextBoxColumn1.DataPropertyName = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn1.HeaderText = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn1.Name = "bestellIDDataGridViewTextBoxColumn1";
-            // 
-            // produktIDDataGridViewTextBoxColumn1
-            // 
-            this.produktIDDataGridViewTextBoxColumn1.DataPropertyName = "ProduktID";
-            this.produktIDDataGridViewTextBoxColumn1.HeaderText = "ProduktID";
-            this.produktIDDataGridViewTextBoxColumn1.Name = "produktIDDataGridViewTextBoxColumn1";
-            // 
-            // bestellMengeDataGridViewTextBoxColumn
-            // 
-            this.bestellMengeDataGridViewTextBoxColumn.DataPropertyName = "BestellMenge";
-            this.bestellMengeDataGridViewTextBoxColumn.HeaderText = "BestellMenge";
-            this.bestellMengeDataGridViewTextBoxColumn.Name = "bestellMengeDataGridViewTextBoxColumn";
-            // 
-            // produziertDataGridViewCheckBoxColumn
-            // 
-            this.produziertDataGridViewCheckBoxColumn.DataPropertyName = "Produziert";
-            this.produziertDataGridViewCheckBoxColumn.HeaderText = "Produziert";
-            this.produziertDataGridViewCheckBoxColumn.Name = "produziertDataGridViewCheckBoxColumn";
-            // 
-            // bestellungEnthaeltBindingSource
-            // 
-            this.bestellungEnthaeltBindingSource.DataMember = "BestellungEnthaelt";
-            this.bestellungEnthaeltBindingSource.DataSource = this.baeckerei40DataSet;
-            // 
-            // baeckerei40DataSet
-            // 
-            this.baeckerei40DataSet.DataSetName = "baeckerei40DataSet";
-            this.baeckerei40DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // buttonProduktionSpeichern
             // 
             this.buttonProduktionSpeichern.Location = new System.Drawing.Point(3, 660);
@@ -438,35 +397,6 @@
             this.Abholzeit.HeaderText = "Abholzeit";
             this.Abholzeit.Name = "Abholzeit";
             // 
-            // bestellIDDataGridViewTextBoxColumn
-            // 
-            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
-            // 
-            // kundenIDDataGridViewTextBoxColumn1
-            // 
-            this.kundenIDDataGridViewTextBoxColumn1.DataPropertyName = "KundenID";
-            this.kundenIDDataGridViewTextBoxColumn1.HeaderText = "KundenID";
-            this.kundenIDDataGridViewTextBoxColumn1.Name = "kundenIDDataGridViewTextBoxColumn1";
-            // 
-            // abholdatumDataGridViewTextBoxColumn
-            // 
-            this.abholdatumDataGridViewTextBoxColumn.DataPropertyName = "Abholdatum";
-            this.abholdatumDataGridViewTextBoxColumn.HeaderText = "Abholdatum";
-            this.abholdatumDataGridViewTextBoxColumn.Name = "abholdatumDataGridViewTextBoxColumn";
-            // 
-            // abholzeitDataGridViewTextBoxColumn
-            // 
-            this.abholzeitDataGridViewTextBoxColumn.DataPropertyName = "Abholzeit";
-            this.abholzeitDataGridViewTextBoxColumn.HeaderText = "Abholzeit";
-            this.abholzeitDataGridViewTextBoxColumn.Name = "abholzeitDataGridViewTextBoxColumn";
-            // 
-            // bestellungenBindingSource
-            // 
-            this.bestellungenBindingSource.DataMember = "Bestellungen";
-            this.bestellungenBindingSource.DataSource = this.baeckerei40DataSet;
-            // 
             // buttonBestelllisteSpeichern
             // 
             this.buttonBestelllisteSpeichern.Location = new System.Drawing.Point(12, 193);
@@ -513,6 +443,7 @@
             this.buttonBestellen.Size = new System.Drawing.Size(161, 52);
             this.buttonBestellen.TabIndex = 8;
             this.buttonBestellen.Text = "Bestellen";
+            this.buttonBestellen.Click += new System.EventHandler(this.buttonBestellen_Click);
             // 
             // buttonWarenkorbHinzufuegen
             // 
@@ -628,34 +559,10 @@
             this.dataGridViewProduktliste.Size = new System.Drawing.Size(345, 233);
             this.dataGridViewProduktliste.TabIndex = 1;
             // 
-            // produktIDDataGridViewTextBoxColumn
-            // 
-            this.produktIDDataGridViewTextBoxColumn.DataPropertyName = "ProduktID";
-            this.produktIDDataGridViewTextBoxColumn.HeaderText = "ProduktID";
-            this.produktIDDataGridViewTextBoxColumn.Name = "produktIDDataGridViewTextBoxColumn";
-            // 
-            // produktNameDataGridViewTextBoxColumn
-            // 
-            this.produktNameDataGridViewTextBoxColumn.DataPropertyName = "ProduktName";
-            this.produktNameDataGridViewTextBoxColumn.HeaderText = "ProduktName";
-            this.produktNameDataGridViewTextBoxColumn.Name = "produktNameDataGridViewTextBoxColumn";
-            // 
-            // produktPreisDataGridViewTextBoxColumn
-            // 
-            this.produktPreisDataGridViewTextBoxColumn.DataPropertyName = "ProduktPreis";
-            this.produktPreisDataGridViewTextBoxColumn.HeaderText = "ProduktPreis";
-            this.produktPreisDataGridViewTextBoxColumn.Name = "produktPreisDataGridViewTextBoxColumn";
-            // 
-            // produkteBindingSource
-            // 
-            this.produkteBindingSource.DataMember = "Produkte";
-            this.produkteBindingSource.DataSource = this.baeckerei40DataSet;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.buttonKundenlisteChange);
-            this.groupBox1.Controls.Add(this.buttonHinzufügen);
-            this.groupBox1.Controls.Add(this.buttonBearbeiten);
+            this.groupBox1.Controls.Add(this.buttonKundeHinzufügen);
+            this.groupBox1.Controls.Add(this.buttonKundeBearbeiten);
             this.groupBox1.Controls.Add(this.groupBox18);
             this.groupBox1.Controls.Add(this.textBoxKundennummer);
             this.groupBox1.Controls.Add(this.labelKundennummer);
@@ -672,35 +579,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kunde";
             // 
-            // buttonKundenlisteChange
+            // buttonKundeHinzufügen
             // 
-            this.buttonKundenlisteChange.Location = new System.Drawing.Point(103, 149);
-            this.buttonKundenlisteChange.Name = "buttonKundenlisteChange";
-            this.buttonKundenlisteChange.Size = new System.Drawing.Size(161, 23);
-            this.buttonKundenlisteChange.TabIndex = 15;
-            this.buttonKundenlisteChange.Text = "Änderungen an Liste speichern";
-            this.buttonKundenlisteChange.UseVisualStyleBackColor = true;
-            this.buttonKundenlisteChange.Click += new System.EventHandler(this.buttonKundenlisteChange_Click);
+            this.buttonKundeHinzufügen.Location = new System.Drawing.Point(103, 123);
+            this.buttonKundeHinzufügen.Name = "buttonKundeHinzufügen";
+            this.buttonKundeHinzufügen.Size = new System.Drawing.Size(75, 23);
+            this.buttonKundeHinzufügen.TabIndex = 14;
+            this.buttonKundeHinzufügen.Text = "hinzufügen";
+            this.buttonKundeHinzufügen.UseVisualStyleBackColor = true;
+            this.buttonKundeHinzufügen.Click += new System.EventHandler(this.buttonHinzufügen_Click);
             // 
-            // buttonHinzufügen
+            // buttonKundeBearbeiten
             // 
-            this.buttonHinzufügen.Location = new System.Drawing.Point(103, 123);
-            this.buttonHinzufügen.Name = "buttonHinzufügen";
-            this.buttonHinzufügen.Size = new System.Drawing.Size(75, 23);
-            this.buttonHinzufügen.TabIndex = 14;
-            this.buttonHinzufügen.Text = "hinzufügen";
-            this.buttonHinzufügen.UseVisualStyleBackColor = true;
-            this.buttonHinzufügen.Click += new System.EventHandler(this.buttonHinzufügen_Click);
-            // 
-            // buttonBearbeiten
-            // 
-            this.buttonBearbeiten.Location = new System.Drawing.Point(184, 123);
-            this.buttonBearbeiten.Name = "buttonBearbeiten";
-            this.buttonBearbeiten.Size = new System.Drawing.Size(75, 23);
-            this.buttonBearbeiten.TabIndex = 13;
-            this.buttonBearbeiten.Text = "bearbeiten";
-            this.buttonBearbeiten.UseVisualStyleBackColor = true;
-            this.buttonBearbeiten.Click += new System.EventHandler(this.buttonBearbeiten_Click);
+            this.buttonKundeBearbeiten.Location = new System.Drawing.Point(184, 123);
+            this.buttonKundeBearbeiten.Name = "buttonKundeBearbeiten";
+            this.buttonKundeBearbeiten.Size = new System.Drawing.Size(75, 23);
+            this.buttonKundeBearbeiten.TabIndex = 13;
+            this.buttonKundeBearbeiten.Text = "bearbeiten";
+            this.buttonKundeBearbeiten.UseVisualStyleBackColor = true;
+            this.buttonKundeBearbeiten.Click += new System.EventHandler(this.buttonBearbeiten_Click);
             // 
             // groupBox18
             // 
@@ -733,59 +630,6 @@
             this.dataGridKundenliste.TabIndex = 0;
             this.dataGridKundenliste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridKundenliste_CellContentClick);
             this.dataGridKundenliste.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridKundenliste_CellDoubleClick);
-            // 
-            // kundenIDDataGridViewTextBoxColumn
-            // 
-            this.kundenIDDataGridViewTextBoxColumn.DataPropertyName = "KundenID";
-            this.kundenIDDataGridViewTextBoxColumn.HeaderText = "KundenID";
-            this.kundenIDDataGridViewTextBoxColumn.Name = "kundenIDDataGridViewTextBoxColumn";
-            // 
-            // vornameDataGridViewTextBoxColumn
-            // 
-            this.vornameDataGridViewTextBoxColumn.DataPropertyName = "Vorname";
-            this.vornameDataGridViewTextBoxColumn.HeaderText = "Vorname";
-            this.vornameDataGridViewTextBoxColumn.Name = "vornameDataGridViewTextBoxColumn";
-            // 
-            // nachnameDataGridViewTextBoxColumn
-            // 
-            this.nachnameDataGridViewTextBoxColumn.DataPropertyName = "Nachname";
-            this.nachnameDataGridViewTextBoxColumn.HeaderText = "Nachname";
-            this.nachnameDataGridViewTextBoxColumn.Name = "nachnameDataGridViewTextBoxColumn";
-            // 
-            // telefonnummerDataGridViewTextBoxColumn
-            // 
-            this.telefonnummerDataGridViewTextBoxColumn.DataPropertyName = "Telefonnummer";
-            this.telefonnummerDataGridViewTextBoxColumn.HeaderText = "Telefonnummer";
-            this.telefonnummerDataGridViewTextBoxColumn.Name = "telefonnummerDataGridViewTextBoxColumn";
-            // 
-            // eMailDataGridViewTextBoxColumn
-            // 
-            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "EMail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "EMail";
-            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
-            // 
-            // adresseDataGridViewTextBoxColumn
-            // 
-            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
-            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
-            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
-            // 
-            // pLZDataGridViewTextBoxColumn
-            // 
-            this.pLZDataGridViewTextBoxColumn.DataPropertyName = "PLZ";
-            this.pLZDataGridViewTextBoxColumn.HeaderText = "PLZ";
-            this.pLZDataGridViewTextBoxColumn.Name = "pLZDataGridViewTextBoxColumn";
-            // 
-            // ortDataGridViewTextBoxColumn
-            // 
-            this.ortDataGridViewTextBoxColumn.DataPropertyName = "Ort";
-            this.ortDataGridViewTextBoxColumn.HeaderText = "Ort";
-            this.ortDataGridViewTextBoxColumn.Name = "ortDataGridViewTextBoxColumn";
-            // 
-            // kundenBindingSource
-            // 
-            this.kundenBindingSource.DataMember = "Kunden";
-            this.kundenBindingSource.DataSource = this.baeckerei40DataSet;
             // 
             // textBoxKundennummer
             // 
@@ -865,6 +709,151 @@
             this.tabControlWrapper.Size = new System.Drawing.Size(1001, 717);
             this.tabControlWrapper.TabIndex = 0;
             // 
+            // bestellIDDataGridViewTextBoxColumn
+            // 
+            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
+            // 
+            // kundenIDDataGridViewTextBoxColumn1
+            // 
+            this.kundenIDDataGridViewTextBoxColumn1.DataPropertyName = "KundenID";
+            this.kundenIDDataGridViewTextBoxColumn1.HeaderText = "KundenID";
+            this.kundenIDDataGridViewTextBoxColumn1.Name = "kundenIDDataGridViewTextBoxColumn1";
+            // 
+            // abholdatumDataGridViewTextBoxColumn
+            // 
+            this.abholdatumDataGridViewTextBoxColumn.DataPropertyName = "Abholdatum";
+            this.abholdatumDataGridViewTextBoxColumn.HeaderText = "Abholdatum";
+            this.abholdatumDataGridViewTextBoxColumn.Name = "abholdatumDataGridViewTextBoxColumn";
+            // 
+            // abholzeitDataGridViewTextBoxColumn
+            // 
+            this.abholzeitDataGridViewTextBoxColumn.DataPropertyName = "Abholzeit";
+            this.abholzeitDataGridViewTextBoxColumn.HeaderText = "Abholzeit";
+            this.abholzeitDataGridViewTextBoxColumn.Name = "abholzeitDataGridViewTextBoxColumn";
+            // 
+            // bestellungenBindingSource
+            // 
+            this.bestellungenBindingSource.DataMember = "Bestellungen";
+            this.bestellungenBindingSource.DataSource = this.baeckerei40DataSet;
+            // 
+            // baeckerei40DataSet
+            // 
+            this.baeckerei40DataSet.DataSetName = "baeckerei40DataSet";
+            this.baeckerei40DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // produktIDDataGridViewTextBoxColumn
+            // 
+            this.produktIDDataGridViewTextBoxColumn.DataPropertyName = "ProduktID";
+            this.produktIDDataGridViewTextBoxColumn.HeaderText = "ProduktID";
+            this.produktIDDataGridViewTextBoxColumn.Name = "produktIDDataGridViewTextBoxColumn";
+            // 
+            // produktNameDataGridViewTextBoxColumn
+            // 
+            this.produktNameDataGridViewTextBoxColumn.DataPropertyName = "ProduktName";
+            this.produktNameDataGridViewTextBoxColumn.HeaderText = "ProduktName";
+            this.produktNameDataGridViewTextBoxColumn.Name = "produktNameDataGridViewTextBoxColumn";
+            // 
+            // produktPreisDataGridViewTextBoxColumn
+            // 
+            this.produktPreisDataGridViewTextBoxColumn.DataPropertyName = "ProduktPreis";
+            this.produktPreisDataGridViewTextBoxColumn.HeaderText = "ProduktPreis";
+            this.produktPreisDataGridViewTextBoxColumn.Name = "produktPreisDataGridViewTextBoxColumn";
+            // 
+            // produkteBindingSource
+            // 
+            this.produkteBindingSource.DataMember = "Produkte";
+            this.produkteBindingSource.DataSource = this.baeckerei40DataSet;
+            // 
+            // kundenIDDataGridViewTextBoxColumn
+            // 
+            this.kundenIDDataGridViewTextBoxColumn.DataPropertyName = "KundenID";
+            this.kundenIDDataGridViewTextBoxColumn.HeaderText = "KundenID";
+            this.kundenIDDataGridViewTextBoxColumn.Name = "kundenIDDataGridViewTextBoxColumn";
+            // 
+            // vornameDataGridViewTextBoxColumn
+            // 
+            this.vornameDataGridViewTextBoxColumn.DataPropertyName = "Vorname";
+            this.vornameDataGridViewTextBoxColumn.HeaderText = "Vorname";
+            this.vornameDataGridViewTextBoxColumn.Name = "vornameDataGridViewTextBoxColumn";
+            // 
+            // nachnameDataGridViewTextBoxColumn
+            // 
+            this.nachnameDataGridViewTextBoxColumn.DataPropertyName = "Nachname";
+            this.nachnameDataGridViewTextBoxColumn.HeaderText = "Nachname";
+            this.nachnameDataGridViewTextBoxColumn.Name = "nachnameDataGridViewTextBoxColumn";
+            // 
+            // telefonnummerDataGridViewTextBoxColumn
+            // 
+            this.telefonnummerDataGridViewTextBoxColumn.DataPropertyName = "Telefonnummer";
+            this.telefonnummerDataGridViewTextBoxColumn.HeaderText = "Telefonnummer";
+            this.telefonnummerDataGridViewTextBoxColumn.Name = "telefonnummerDataGridViewTextBoxColumn";
+            // 
+            // eMailDataGridViewTextBoxColumn
+            // 
+            this.eMailDataGridViewTextBoxColumn.DataPropertyName = "EMail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "EMail";
+            this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // adresseDataGridViewTextBoxColumn
+            // 
+            this.adresseDataGridViewTextBoxColumn.DataPropertyName = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.HeaderText = "Adresse";
+            this.adresseDataGridViewTextBoxColumn.Name = "adresseDataGridViewTextBoxColumn";
+            // 
+            // pLZDataGridViewTextBoxColumn
+            // 
+            this.pLZDataGridViewTextBoxColumn.DataPropertyName = "PLZ";
+            this.pLZDataGridViewTextBoxColumn.HeaderText = "PLZ";
+            this.pLZDataGridViewTextBoxColumn.Name = "pLZDataGridViewTextBoxColumn";
+            // 
+            // ortDataGridViewTextBoxColumn
+            // 
+            this.ortDataGridViewTextBoxColumn.DataPropertyName = "Ort";
+            this.ortDataGridViewTextBoxColumn.HeaderText = "Ort";
+            this.ortDataGridViewTextBoxColumn.Name = "ortDataGridViewTextBoxColumn";
+            // 
+            // kundenBindingSource
+            // 
+            this.kundenBindingSource.DataMember = "Kunden";
+            this.kundenBindingSource.DataSource = this.baeckerei40DataSet;
+            // 
+            // bestellungEnthaeltIDDataGridViewTextBoxColumn
+            // 
+            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.DataPropertyName = "BestellungEnthaeltID";
+            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.HeaderText = "BestellungEnthaeltID";
+            this.bestellungEnthaeltIDDataGridViewTextBoxColumn.Name = "bestellungEnthaeltIDDataGridViewTextBoxColumn";
+            // 
+            // bestellIDDataGridViewTextBoxColumn1
+            // 
+            this.bestellIDDataGridViewTextBoxColumn1.DataPropertyName = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn1.HeaderText = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn1.Name = "bestellIDDataGridViewTextBoxColumn1";
+            // 
+            // produktIDDataGridViewTextBoxColumn1
+            // 
+            this.produktIDDataGridViewTextBoxColumn1.DataPropertyName = "ProduktID";
+            this.produktIDDataGridViewTextBoxColumn1.HeaderText = "ProduktID";
+            this.produktIDDataGridViewTextBoxColumn1.Name = "produktIDDataGridViewTextBoxColumn1";
+            // 
+            // bestellMengeDataGridViewTextBoxColumn
+            // 
+            this.bestellMengeDataGridViewTextBoxColumn.DataPropertyName = "BestellMenge";
+            this.bestellMengeDataGridViewTextBoxColumn.HeaderText = "BestellMenge";
+            this.bestellMengeDataGridViewTextBoxColumn.Name = "bestellMengeDataGridViewTextBoxColumn";
+            // 
+            // produziertDataGridViewCheckBoxColumn
+            // 
+            this.produziertDataGridViewCheckBoxColumn.DataPropertyName = "Produziert";
+            this.produziertDataGridViewCheckBoxColumn.HeaderText = "Produziert";
+            this.produziertDataGridViewCheckBoxColumn.Name = "produziertDataGridViewCheckBoxColumn";
+            // 
+            // bestellungEnthaeltBindingSource
+            // 
+            this.bestellungEnthaeltBindingSource.DataMember = "BestellungEnthaelt";
+            this.bestellungEnthaeltBindingSource.DataSource = this.baeckerei40DataSet;
+            // 
             // kundenTableAdapter
             // 
             this.kundenTableAdapter.ClearBeforeFill = true;
@@ -901,23 +890,23 @@
             this.tabPageProduktion.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).EndInit();
             this.tabPageBestellung.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.produkteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridKundenliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).EndInit();
             this.tabControlWrapper.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.produkteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -955,7 +944,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridViewProduktliste;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button buttonBearbeiten;
+        private System.Windows.Forms.Button buttonKundeBearbeiten;
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.DataGridView dataGridKundenliste;
         private System.Windows.Forms.TextBox textBoxKundennummer;
@@ -1007,8 +996,7 @@
         private System.Windows.Forms.Label labelWarenkorb;
         private System.Windows.Forms.Label labelGesamtpreis;
         private System.Windows.Forms.Button buttonBestellen;
-        private System.Windows.Forms.Button buttonHinzufügen;
-        private System.Windows.Forms.Button buttonKundenlisteChange;
+        private System.Windows.Forms.Button buttonKundeHinzufügen;
     }
 }
 
