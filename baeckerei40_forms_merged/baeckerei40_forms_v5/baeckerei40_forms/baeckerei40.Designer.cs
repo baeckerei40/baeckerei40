@@ -177,7 +177,7 @@
             this.tabPageProduktion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewProduktionsliste = new System.Windows.Forms.DataGridView();
             this.bestellungEnthaeltIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bestellIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produktIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -190,6 +190,10 @@
             this.buttonWarenkorbHinzufuegen = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewBestellliste = new System.Windows.Forms.DataGridView();
+            this.KundenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abholdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abholzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bestellungenPodukteInBestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBestelllisteSpeichern = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -199,8 +203,6 @@
             this.labelWarenkorb = new System.Windows.Forms.Label();
             this.dateTimePickerAbholzeit = new System.Windows.Forms.DateTimePicker();
             this.labelAbholzeit = new System.Windows.Forms.Label();
-            this.textBoxBestellID = new System.Windows.Forms.TextBox();
-            this.labelBestellID = new System.Windows.Forms.Label();
             this.listBoxWarenkorb = new System.Windows.Forms.ListBox();
             this.labelAbholdatum = new System.Windows.Forms.Label();
             this.dateTimePickerAbholdatum = new System.Windows.Forms.DateTimePicker();
@@ -247,9 +249,6 @@
             this.bestellungEnthaeltTableAdapter1 = new baeckerei40_forms.baeckerei40DataSet9TableAdapters.BestellungEnthaeltTableAdapter();
             this.bestellungenTableAdapter2 = new baeckerei40_forms.baeckerei40DataSet10TableAdapters.BestellungenTableAdapter();
             this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.KundenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Abholdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Abholzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageRohstoffe.SuspendLayout();
             this.panelRez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rezeptverwaltungBindingSource)).BeginInit();
@@ -281,12 +280,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLager)).BeginInit();
             this.tabPageProduktion.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktionsliste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).BeginInit();
             this.tabPageBestellung.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1580,7 +1580,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.dataGridView1);
+            this.groupBox5.Controls.Add(this.dataGridViewProduktionsliste);
             this.groupBox5.Location = new System.Drawing.Point(6, 6);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(964, 307);
@@ -1588,22 +1588,22 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Produktionsliste";
             // 
-            // dataGridView1
+            // dataGridViewProduktionsliste
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewProduktionsliste.AllowUserToAddRows = false;
+            this.dataGridViewProduktionsliste.AutoGenerateColumns = false;
+            this.dataGridViewProduktionsliste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewProduktionsliste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.bestellungEnthaeltIDDataGridViewTextBoxColumn,
             this.bestellIDDataGridViewTextBoxColumn1,
             this.produktIDDataGridViewTextBoxColumn1,
             this.bestellMengeDataGridViewTextBoxColumn,
             this.produziertDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.bestellungEnthaeltBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(958, 282);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewProduktionsliste.DataSource = this.bestellungEnthaeltBindingSource;
+            this.dataGridViewProduktionsliste.Location = new System.Drawing.Point(6, 19);
+            this.dataGridViewProduktionsliste.Name = "dataGridViewProduktionsliste";
+            this.dataGridViewProduktionsliste.Size = new System.Drawing.Size(958, 282);
+            this.dataGridViewProduktionsliste.TabIndex = 0;
             // 
             // bestellungEnthaeltIDDataGridViewTextBoxColumn
             // 
@@ -1698,20 +1698,44 @@
             this.dataGridViewBestellliste.AutoGenerateColumns = false;
             this.dataGridViewBestellliste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBestellliste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.bestellIDDataGridViewTextBoxColumn,
             this.KundenID,
             this.Abholdatum,
-            this.Abholzeit});
+            this.Abholzeit,
+            this.bestellIDDataGridViewTextBoxColumn});
             this.dataGridViewBestellliste.DataSource = this.bestellungenBindingSource;
             this.dataGridViewBestellliste.Location = new System.Drawing.Point(10, 19);
             this.dataGridViewBestellliste.Name = "dataGridViewBestellliste";
             this.dataGridViewBestellliste.Size = new System.Drawing.Size(519, 168);
             this.dataGridViewBestellliste.TabIndex = 2;
             // 
+            // KundenID
+            // 
+            this.KundenID.DataPropertyName = "KundenID";
+            this.KundenID.HeaderText = "KundenID";
+            this.KundenID.Name = "KundenID";
+            // 
+            // Abholdatum
+            // 
+            this.Abholdatum.DataPropertyName = "Abholdatum";
+            this.Abholdatum.HeaderText = "Abholdatum";
+            this.Abholdatum.Name = "Abholdatum";
+            // 
+            // Abholzeit
+            // 
+            this.Abholzeit.DataPropertyName = "Abholzeit";
+            this.Abholzeit.HeaderText = "Abholzeit";
+            this.Abholzeit.Name = "Abholzeit";
+            // 
+            // bestellungenPodukteInBestellungenBindingSource
+            // 
+            this.bestellungenPodukteInBestellungenBindingSource.DataMember = "BestellungenPodukteInBestellungen";
+            this.bestellungenPodukteInBestellungenBindingSource.DataSource = this.bestellungenBindingSource;
+            // 
             // bestellungenBindingSource
             // 
             this.bestellungenBindingSource.DataMember = "Bestellungen";
             this.bestellungenBindingSource.DataSource = this.baeckerei40DataSet;
+            this.bestellungenBindingSource.CurrentChanged += new System.EventHandler(this.bestellungenBindingSource_CurrentChanged);
             // 
             // buttonBestelllisteSpeichern
             // 
@@ -1730,8 +1754,6 @@
             this.groupBox3.Controls.Add(this.labelWarenkorb);
             this.groupBox3.Controls.Add(this.dateTimePickerAbholzeit);
             this.groupBox3.Controls.Add(this.labelAbholzeit);
-            this.groupBox3.Controls.Add(this.textBoxBestellID);
-            this.groupBox3.Controls.Add(this.labelBestellID);
             this.groupBox3.Controls.Add(this.listBoxWarenkorb);
             this.groupBox3.Controls.Add(this.labelAbholdatum);
             this.groupBox3.Controls.Add(this.dateTimePickerAbholdatum);
@@ -1796,23 +1818,6 @@
             this.labelAbholzeit.Size = new System.Drawing.Size(50, 13);
             this.labelAbholzeit.TabIndex = 22;
             this.labelAbholzeit.Text = "Abholzeit";
-            // 
-            // textBoxBestellID
-            // 
-            this.textBoxBestellID.Location = new System.Drawing.Point(103, 44);
-            this.textBoxBestellID.Name = "textBoxBestellID";
-            this.textBoxBestellID.ReadOnly = true;
-            this.textBoxBestellID.Size = new System.Drawing.Size(161, 20);
-            this.textBoxBestellID.TabIndex = 14;
-            // 
-            // labelBestellID
-            // 
-            this.labelBestellID.AutoSize = true;
-            this.labelBestellID.Location = new System.Drawing.Point(48, 51);
-            this.labelBestellID.Name = "labelBestellID";
-            this.labelBestellID.Size = new System.Drawing.Size(49, 13);
-            this.labelBestellID.TabIndex = 14;
-            this.labelBestellID.Text = "BestellID";
             // 
             // listBoxWarenkorb
             // 
@@ -2157,24 +2162,6 @@
             this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
             this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
             // 
-            // KundenID
-            // 
-            this.KundenID.DataPropertyName = "KundenID";
-            this.KundenID.HeaderText = "KundenID";
-            this.KundenID.Name = "KundenID";
-            // 
-            // Abholdatum
-            // 
-            this.Abholdatum.DataPropertyName = "Abholdatum";
-            this.Abholdatum.HeaderText = "Abholdatum";
-            this.Abholdatum.Name = "Abholdatum";
-            // 
-            // Abholzeit
-            // 
-            this.Abholzeit.DataPropertyName = "Abholzeit";
-            this.Abholzeit.HeaderText = "Abholzeit";
-            this.Abholzeit.Name = "Abholzeit";
-            // 
             // baeckerei40
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2223,12 +2210,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLager)).EndInit();
             this.tabPageProduktion.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProduktionsliste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungEnthaeltBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSet)).EndInit();
             this.tabPageBestellung.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -2262,7 +2250,7 @@
         private System.Windows.Forms.TabPage tabPageProduktion;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewProduktionsliste;
         private System.Windows.Forms.Button buttonProduktionSpeichern;
         private System.Windows.Forms.TabPage tabPageBestellung;
         private System.Windows.Forms.Button buttonWarenkorbEntfernen;
@@ -2289,8 +2277,6 @@
         private System.Windows.Forms.Label labelVorname;
         private System.Windows.Forms.Button buttonBestelllisteSpeichern;
         private System.Windows.Forms.TabControl tabControlWrapper;
-        private System.Windows.Forms.TextBox textBoxBestellID;
-        private System.Windows.Forms.Label labelBestellID;
         private baeckerei40DataSet baeckerei40DataSet;
         private System.Windows.Forms.BindingSource kundenBindingSource;
         private baeckerei40DataSetTableAdapters.KundenTableAdapter kundenTableAdapter;
@@ -2465,10 +2451,11 @@
         private System.Windows.Forms.Label labelWarenkorb;
         private System.Windows.Forms.Button buttonKundeHinzufügen;
         private System.Windows.Forms.Button buttonAenderungProduktliste;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bestellIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn KundenID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Abholdatum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Abholzeit;
+        private System.Windows.Forms.BindingSource bestellungenPodukteInBestellungenBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bestellIDDataGridViewTextBoxColumn;
     }
 }
 

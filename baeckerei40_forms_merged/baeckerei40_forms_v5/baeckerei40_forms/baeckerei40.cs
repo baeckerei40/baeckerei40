@@ -17,7 +17,6 @@ namespace baeckerei40_forms
         //Klassendeklarationen
         List<Produkt> Warenkorb = new List<Produkt>(); // Warenkorb
         int AusgewaehlterKunde;
-        int BestellID;
 
         public baeckerei40(Mitarbeiter m)
         {
@@ -27,6 +26,8 @@ namespace baeckerei40_forms
             switch (m.Benutzername)
             {
                 case "Manager":
+                    // Controlling-Tab auch für Manager ausblenden
+                    this.tabControlWrapper.TabPages.Remove(tabPageControlling);
                     break;
                 case "Verkauf":
                     this.tabControlWrapper.TabPages.Remove(tabPageControlling);
@@ -83,8 +84,7 @@ namespace baeckerei40_forms
                 AusgewaehlterKunde = this.kundenTableAdapter.MaxKundenID(baeckerei40DataSet.Kunden);
                 textBoxKundennummer.Text = AusgewaehlterKunde.ToString();
                 this.kundenTableAdapter.Insert(textBoxVorname.Text, textBoxNachname.Text, textBoxTelefonnummer.Text, "", "", "", "");
-                this.kundenTableAdapter.Fill(this.baeckerei40DataSet.Kunden);
-                
+                this.kundenTableAdapter.Fill(this.baeckerei40DataSet.Kunden);         
             }
             catch (Exception ex)
             {
@@ -108,12 +108,12 @@ namespace baeckerei40_forms
                 this.Validate();
                 this.dataGridKundenliste.EndEdit();
                 this.kundenTableAdapter.Update(this.baeckerei40DataSet.Kunden);
-                MessageBox.Show("Update successful");
+                MessageBox.Show("Änderung erfolgreich!");
                 dataGridKundenliste.Update();
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show("Update failed\n" + ex);
+                MessageBox.Show("Update fehlgeschlagen!\n" + ex);
             }
         }
 
@@ -123,7 +123,7 @@ namespace baeckerei40_forms
             this.Validate();
             this.dataGridViewProduktliste.EndEdit();
             this.produkteTableAdapter.Update(this.baeckerei40DataSet.Produkte);
-            MessageBox.Show("Update successful");
+            MessageBox.Show("Änderung erfolgreich!");
         }
 
         //Clickevent für die Bestellliste
@@ -134,11 +134,11 @@ namespace baeckerei40_forms
                 this.Validate();
                 this.dataGridViewBestellliste.EndEdit();
                 this.bestellungenTableAdapter.Update(this.baeckerei40DataSet.Bestellungen);
-                MessageBox.Show("Update successful");
+                MessageBox.Show("Änderung erfolgreich!");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Update failed\n" + ex);
+                MessageBox.Show("Update fehlgeschlagen!\n" + ex);
             }
         }
 
@@ -182,9 +182,9 @@ namespace baeckerei40_forms
                 this.listBoxWarenkorb.Items.RemoveAt(this.listBoxWarenkorb.SelectedIndex);
                 this.Warenkorb.RemoveAt(this.listBoxWarenkorb.SelectedIndex + 1);
                 double gesamtpreis = 0;
-                foreach (Produkt x in Warenkorb)
+                foreach (Produkt p in Warenkorb)
                 {
-                    gesamtpreis = gesamtpreis + x.ProduktPreis;
+                    gesamtpreis = gesamtpreis + p.ProduktPreis;
                 }
                labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString() + " €";
             }
@@ -199,16 +199,26 @@ namespace baeckerei40_forms
         {
             try
             {
-                BestellID = this.bestellungenTableAdapter.MaxBestellID(baeckerei40DataSet.Bestellungen);
-                textBoxBestellID.Text = BestellID.ToString();
-                this.bestellungenTableAdapter.Insert(int.Parse(textBoxKundennummer.Text), dateTimePickerAbholdatum.Value.ToString(), dateTimePickerAbholzeit.Value.ToString());
-                bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
-                foreach (Produkt p in Warenkorb)
+                if(textBoxKundennummer.Text == "")
                 {
-                    this.bestellungEnthaeltTableAdapter.Insert(int.Parse(textBoxBestellID.Text),p.ProduktID,1);
-                    this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
+                    MessageBox.Show("Kein Kunde ausgewählt! \n");
+                } else {
+                    this.bestellungenTableAdapter.Insert(int.Parse(textBoxKundennummer.Text), dateTimePickerAbholdatum.Value.ToString(), dateTimePickerAbholzeit.Value.ToString());
+                    bestellungenTableAdapter.ClearBeforeFill = true;
+                    bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
+                    foreach (Produkt p in Warenkorb)
+                    {
+                        this.bestellungEnthaeltTableAdapter.Insert(int.Parse(textBoxKundennummer.Text),p.ProduktID,1);
+                        this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
+                    }
+                    this.dataGridViewBestellliste.Update();
+                    MessageBox.Show("Bestellung erforgreich erstellt. \n");
+                    this.Warenkorb.Clear();
+                    this.listBoxWarenkorb.Items.Clear();
+                    bestellungenBindingSource.DataSource = baeckerei40DataSet.Bestellungen;
+                    bestellungenBindingSource.ResetBindings(true);
+                    this.dataGridViewBestellliste.Refresh();
                 }
-
             }
             catch (Exception ex)
             {
@@ -218,9 +228,21 @@ namespace baeckerei40_forms
 
         //#######################################-Tab Produktion-#########################################
 
+        // Klickevent für Produktion speichern Button
         private void buttonProduktionSpeichern_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Validate();
+                this.dataGridViewProduktionsliste.EndEdit();
+                this.bestellungEnthaeltTableAdapter.Update(this.baeckerei40DataSet.BestellungEnthaelt);
+                MessageBox.Show("Änderungen gespeichert!");
+                dataGridViewProduktliste.Update();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Speichern fehlgeschlagen. \n" + ex);
+            }
         }
 
         //#######################################-Tab Lager-#########################################
@@ -522,6 +544,10 @@ namespace baeckerei40_forms
             }
         }
 
+        private void bestellungenBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
