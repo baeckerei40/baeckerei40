@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.labelBenutzer = new System.Windows.Forms.Label();
             this.tabPageControlling = new System.Windows.Forms.TabPage();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.tabPageRohstoffe = new System.Windows.Forms.TabPage();
             this.RezSp = new System.Windows.Forms.Button();
             this.RezHinzu = new System.Windows.Forms.Button();
@@ -190,13 +187,16 @@
             this.baeckerei40DataSet = new baeckerei40_forms.baeckerei40DataSet();
             this.buttonProduktionSpeichern = new System.Windows.Forms.Button();
             this.tabPageBestellung = new System.Windows.Forms.TabPage();
-            this.buttonWarenkorbEntfernen = new System.Windows.Forms.Button();
             this.buttonWarenkorbHinzufuegen = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridViewBestellliste = new System.Windows.Forms.DataGridView();
             this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBestelllisteSpeichern = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonBestellen = new System.Windows.Forms.Button();
+            this.labelGesamtpreis = new System.Windows.Forms.Label();
+            this.buttonWarenkorbEntfernen = new System.Windows.Forms.Button();
+            this.labelWarenkorb = new System.Windows.Forms.Label();
             this.dateTimePickerAbholzeit = new System.Windows.Forms.DateTimePicker();
             this.labelAbholzeit = new System.Windows.Forms.Label();
             this.textBoxBestellID = new System.Windows.Forms.TextBox();
@@ -205,12 +205,14 @@
             this.labelAbholdatum = new System.Windows.Forms.Label();
             this.dateTimePickerAbholdatum = new System.Windows.Forms.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonAenderungProduktliste = new System.Windows.Forms.Button();
             this.dataGridViewProduktliste = new System.Windows.Forms.DataGridView();
             this.produktIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produktNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produktPreisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produkteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonKundeHinzufügen = new System.Windows.Forms.Button();
             this.buttonBearbeiten = new System.Windows.Forms.Button();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.dataGridKundenliste = new System.Windows.Forms.DataGridView();
@@ -244,18 +246,10 @@
             this.bestellungenTableAdapter1 = new baeckerei40_forms.baeckerei40DataSet8TableAdapters.BestellungenTableAdapter();
             this.bestellungEnthaeltTableAdapter1 = new baeckerei40_forms.baeckerei40DataSet9TableAdapters.BestellungEnthaeltTableAdapter();
             this.bestellungenTableAdapter2 = new baeckerei40_forms.baeckerei40DataSet10TableAdapters.BestellungenTableAdapter();
-            this.buttonKundeHinzufügen = new System.Windows.Forms.Button();
-            this.labelWarenkorb = new System.Windows.Forms.Label();
-            this.labelGesamtpreis = new System.Windows.Forms.Label();
-            this.buttonBestellen = new System.Windows.Forms.Button();
+            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.KundenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abholdatumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abholzeitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonAenderungProduktliste = new System.Windows.Forms.Button();
-            this.tabPageControlling.SuspendLayout();
             this.tabPageRohstoffe.SuspendLayout();
             this.panelRez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rezeptverwaltungBindingSource)).BeginInit();
@@ -317,9 +311,6 @@
             // 
             // tabPageControlling
             // 
-            this.tabPageControlling.Controls.Add(this.groupBox17);
-            this.tabPageControlling.Controls.Add(this.groupBox16);
-            this.tabPageControlling.Controls.Add(this.groupBox15);
             this.tabPageControlling.Location = new System.Drawing.Point(4, 22);
             this.tabPageControlling.Name = "tabPageControlling";
             this.tabPageControlling.Padding = new System.Windows.Forms.Padding(3);
@@ -327,33 +318,6 @@
             this.tabPageControlling.TabIndex = 6;
             this.tabPageControlling.Text = "Controlling";
             this.tabPageControlling.UseVisualStyleBackColor = true;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Location = new System.Drawing.Point(670, 12);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(326, 578);
-            this.groupBox17.TabIndex = 2;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Sonstiges";
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Location = new System.Drawing.Point(338, 9);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(326, 578);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Lager";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Location = new System.Drawing.Point(6, 6);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(326, 578);
-            this.groupBox15.TabIndex = 0;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Gewinn";
             // 
             // tabPageRohstoffe
             // 
@@ -1689,6 +1653,7 @@
             this.buttonProduktionSpeichern.TabIndex = 0;
             this.buttonProduktionSpeichern.Text = "Produktion Speichern";
             this.buttonProduktionSpeichern.UseVisualStyleBackColor = true;
+            this.buttonProduktionSpeichern.Click += new System.EventHandler(this.buttonProduktionSpeichern_Click);
             // 
             // tabPageBestellung
             // 
@@ -1706,16 +1671,6 @@
             this.tabPageBestellung.Text = "Bestellung";
             this.tabPageBestellung.UseVisualStyleBackColor = true;
             // 
-            // buttonWarenkorbEntfernen
-            // 
-            this.buttonWarenkorbEntfernen.Location = new System.Drawing.Point(534, 136);
-            this.buttonWarenkorbEntfernen.Name = "buttonWarenkorbEntfernen";
-            this.buttonWarenkorbEntfernen.Size = new System.Drawing.Size(58, 23);
-            this.buttonWarenkorbEntfernen.TabIndex = 5;
-            this.buttonWarenkorbEntfernen.Text = ">>";
-            this.buttonWarenkorbEntfernen.UseVisualStyleBackColor = true;
-            this.buttonWarenkorbEntfernen.Click += new System.EventHandler(this.buttonWarenkorbEntfernen_Click);
-            // 
             // buttonWarenkorbHinzufuegen
             // 
             this.buttonWarenkorbHinzufuegen.Location = new System.Drawing.Point(541, 293);
@@ -1732,7 +1687,7 @@
             this.groupBox4.Controls.Add(this.buttonBestelllisteSpeichern);
             this.groupBox4.Location = new System.Drawing.Point(6, 451);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(972, 218);
+            this.groupBox4.Size = new System.Drawing.Size(593, 234);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Bestellliste";
@@ -1743,16 +1698,14 @@
             this.dataGridViewBestellliste.AutoGenerateColumns = false;
             this.dataGridViewBestellliste.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBestellliste.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.bestellIDDataGridViewTextBoxColumn,
             this.KundenID,
             this.Abholdatum,
-            this.Abholzeit,
-            this.bestellIDDataGridViewTextBoxColumn,
-            this.abholdatumDataGridViewTextBoxColumn,
-            this.abholzeitDataGridViewTextBoxColumn});
+            this.Abholzeit});
             this.dataGridViewBestellliste.DataSource = this.bestellungenBindingSource;
             this.dataGridViewBestellliste.Location = new System.Drawing.Point(10, 19);
             this.dataGridViewBestellliste.Name = "dataGridViewBestellliste";
-            this.dataGridViewBestellliste.Size = new System.Drawing.Size(942, 168);
+            this.dataGridViewBestellliste.Size = new System.Drawing.Size(519, 168);
             this.dataGridViewBestellliste.TabIndex = 2;
             // 
             // bestellungenBindingSource
@@ -1762,9 +1715,9 @@
             // 
             // buttonBestelllisteSpeichern
             // 
-            this.buttonBestelllisteSpeichern.Location = new System.Drawing.Point(12, 193);
+            this.buttonBestelllisteSpeichern.Location = new System.Drawing.Point(159, 197);
             this.buttonBestelllisteSpeichern.Name = "buttonBestelllisteSpeichern";
-            this.buttonBestelllisteSpeichern.Size = new System.Drawing.Size(312, 23);
+            this.buttonBestelllisteSpeichern.Size = new System.Drawing.Size(217, 23);
             this.buttonBestelllisteSpeichern.TabIndex = 7;
             this.buttonBestelllisteSpeichern.Text = "Änderungen an Bestellliste speichern";
             this.buttonBestelllisteSpeichern.Click += new System.EventHandler(this.buttonBestelllisteSpeichern_Click);
@@ -1789,19 +1742,56 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Warenkorb";
             // 
+            // buttonBestellen
+            // 
+            this.buttonBestellen.Location = new System.Drawing.Point(81, 179);
+            this.buttonBestellen.Name = "buttonBestellen";
+            this.buttonBestellen.Size = new System.Drawing.Size(183, 63);
+            this.buttonBestellen.TabIndex = 27;
+            this.buttonBestellen.Text = "Bestellen";
+            this.buttonBestellen.Click += new System.EventHandler(this.buttonBestellen_Click);
+            // 
+            // labelGesamtpreis
+            // 
+            this.labelGesamtpreis.AutoSize = true;
+            this.labelGesamtpreis.Location = new System.Drawing.Point(100, 146);
+            this.labelGesamtpreis.Name = "labelGesamtpreis";
+            this.labelGesamtpreis.Size = new System.Drawing.Size(69, 13);
+            this.labelGesamtpreis.TabIndex = 26;
+            this.labelGesamtpreis.Text = "Gesamt-Preis";
+            // 
+            // buttonWarenkorbEntfernen
+            // 
+            this.buttonWarenkorbEntfernen.Location = new System.Drawing.Point(534, 136);
+            this.buttonWarenkorbEntfernen.Name = "buttonWarenkorbEntfernen";
+            this.buttonWarenkorbEntfernen.Size = new System.Drawing.Size(58, 23);
+            this.buttonWarenkorbEntfernen.TabIndex = 5;
+            this.buttonWarenkorbEntfernen.Text = ">>";
+            this.buttonWarenkorbEntfernen.UseVisualStyleBackColor = true;
+            this.buttonWarenkorbEntfernen.Click += new System.EventHandler(this.buttonWarenkorbEntfernen_Click);
+            // 
+            // labelWarenkorb
+            // 
+            this.labelWarenkorb.AutoSize = true;
+            this.labelWarenkorb.Location = new System.Drawing.Point(338, 16);
+            this.labelWarenkorb.Name = "labelWarenkorb";
+            this.labelWarenkorb.Size = new System.Drawing.Size(127, 13);
+            this.labelWarenkorb.TabIndex = 25;
+            this.labelWarenkorb.Text = "ProduktID - Produktname";
+            // 
             // dateTimePickerAbholzeit
             // 
             this.dateTimePickerAbholzeit.CustomFormat = "";
             this.dateTimePickerAbholzeit.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerAbholzeit.Location = new System.Drawing.Point(73, 106);
+            this.dateTimePickerAbholzeit.Location = new System.Drawing.Point(103, 100);
             this.dateTimePickerAbholzeit.Name = "dateTimePickerAbholzeit";
-            this.dateTimePickerAbholzeit.Size = new System.Drawing.Size(104, 20);
+            this.dateTimePickerAbholzeit.Size = new System.Drawing.Size(161, 20);
             this.dateTimePickerAbholzeit.TabIndex = 23;
             // 
             // labelAbholzeit
             // 
             this.labelAbholzeit.AutoSize = true;
-            this.labelAbholzeit.Location = new System.Drawing.Point(17, 106);
+            this.labelAbholzeit.Location = new System.Drawing.Point(42, 106);
             this.labelAbholzeit.Name = "labelAbholzeit";
             this.labelAbholzeit.Size = new System.Drawing.Size(50, 13);
             this.labelAbholzeit.TabIndex = 22;
@@ -1809,16 +1799,16 @@
             // 
             // textBoxBestellID
             // 
-            this.textBoxBestellID.Location = new System.Drawing.Point(75, 45);
+            this.textBoxBestellID.Location = new System.Drawing.Point(103, 44);
             this.textBoxBestellID.Name = "textBoxBestellID";
             this.textBoxBestellID.ReadOnly = true;
-            this.textBoxBestellID.Size = new System.Drawing.Size(102, 20);
+            this.textBoxBestellID.Size = new System.Drawing.Size(161, 20);
             this.textBoxBestellID.TabIndex = 14;
             // 
             // labelBestellID
             // 
             this.labelBestellID.AutoSize = true;
-            this.labelBestellID.Location = new System.Drawing.Point(17, 51);
+            this.labelBestellID.Location = new System.Drawing.Point(48, 51);
             this.labelBestellID.Name = "labelBestellID";
             this.labelBestellID.Size = new System.Drawing.Size(49, 13);
             this.labelBestellID.TabIndex = 14;
@@ -1827,15 +1817,15 @@
             // listBoxWarenkorb
             // 
             this.listBoxWarenkorb.FormattingEnabled = true;
-            this.listBoxWarenkorb.Location = new System.Drawing.Point(330, 39);
+            this.listBoxWarenkorb.Location = new System.Drawing.Point(287, 39);
             this.listBoxWarenkorb.Name = "listBoxWarenkorb";
-            this.listBoxWarenkorb.Size = new System.Drawing.Size(198, 160);
+            this.listBoxWarenkorb.Size = new System.Drawing.Size(241, 212);
             this.listBoxWarenkorb.TabIndex = 21;
             // 
             // labelAbholdatum
             // 
             this.labelAbholdatum.AutoSize = true;
-            this.labelAbholdatum.Location = new System.Drawing.Point(17, 77);
+            this.labelAbholdatum.Location = new System.Drawing.Point(34, 78);
             this.labelAbholdatum.Name = "labelAbholdatum";
             this.labelAbholdatum.Size = new System.Drawing.Size(63, 13);
             this.labelAbholdatum.TabIndex = 20;
@@ -1845,9 +1835,9 @@
             // 
             this.dateTimePickerAbholdatum.CustomFormat = "";
             this.dateTimePickerAbholdatum.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerAbholdatum.Location = new System.Drawing.Point(86, 77);
+            this.dateTimePickerAbholdatum.Location = new System.Drawing.Point(103, 71);
             this.dateTimePickerAbholdatum.Name = "dateTimePickerAbholdatum";
-            this.dateTimePickerAbholdatum.Size = new System.Drawing.Size(91, 20);
+            this.dateTimePickerAbholdatum.Size = new System.Drawing.Size(161, 20);
             this.dateTimePickerAbholdatum.TabIndex = 0;
             // 
             // groupBox2
@@ -1856,10 +1846,19 @@
             this.groupBox2.Controls.Add(this.dataGridViewProduktliste);
             this.groupBox2.Location = new System.Drawing.Point(605, 185);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(373, 260);
+            this.groupBox2.Size = new System.Drawing.Size(373, 500);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Produktliste";
+            // 
+            // buttonAenderungProduktliste
+            // 
+            this.buttonAenderungProduktliste.Location = new System.Drawing.Point(101, 459);
+            this.buttonAenderungProduktliste.Name = "buttonAenderungProduktliste";
+            this.buttonAenderungProduktliste.Size = new System.Drawing.Size(191, 27);
+            this.buttonAenderungProduktliste.TabIndex = 28;
+            this.buttonAenderungProduktliste.Text = "Änderung an Produktliste speichern";
+            this.buttonAenderungProduktliste.Click += new System.EventHandler(this.buttonAenderungProduktliste_Click);
             // 
             // dataGridViewProduktliste
             // 
@@ -1873,8 +1872,9 @@
             this.dataGridViewProduktliste.DataSource = this.produkteBindingSource;
             this.dataGridViewProduktliste.Location = new System.Drawing.Point(5, 19);
             this.dataGridViewProduktliste.Name = "dataGridViewProduktliste";
-            this.dataGridViewProduktliste.Size = new System.Drawing.Size(345, 191);
+            this.dataGridViewProduktliste.Size = new System.Drawing.Size(362, 434);
             this.dataGridViewProduktliste.TabIndex = 1;
+            this.dataGridViewProduktliste.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewdataGridViewProduktliste_CellContentDoubleClick);
             // 
             // produktIDDataGridViewTextBoxColumn
             // 
@@ -1919,6 +1919,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Kunde";
             // 
+            // buttonKundeHinzufügen
+            // 
+            this.buttonKundeHinzufügen.Location = new System.Drawing.Point(103, 123);
+            this.buttonKundeHinzufügen.Name = "buttonKundeHinzufügen";
+            this.buttonKundeHinzufügen.Size = new System.Drawing.Size(80, 23);
+            this.buttonKundeHinzufügen.TabIndex = 15;
+            this.buttonKundeHinzufügen.Text = "hinzufügen";
+            this.buttonKundeHinzufügen.UseVisualStyleBackColor = true;
+            this.buttonKundeHinzufügen.Click += new System.EventHandler(this.buttonKundeHinzufuegen_Click);
+            // 
             // buttonBearbeiten
             // 
             this.buttonBearbeiten.Location = new System.Drawing.Point(184, 123);
@@ -1927,7 +1937,7 @@
             this.buttonBearbeiten.TabIndex = 13;
             this.buttonBearbeiten.Text = "bearbeiten";
             this.buttonBearbeiten.UseVisualStyleBackColor = true;
-            this.buttonBearbeiten.Click += new System.EventHandler(this.buttonBearbeiten_Click);
+            this.buttonBearbeiten.Click += new System.EventHandler(this.buttonKundeBearbeiten_Click);
             // 
             // groupBox18
             // 
@@ -1956,9 +1966,8 @@
             this.dataGridKundenliste.DataSource = this.kundenBindingSource;
             this.dataGridKundenliste.Location = new System.Drawing.Point(8, 19);
             this.dataGridKundenliste.Name = "dataGridKundenliste";
-            this.dataGridKundenliste.Size = new System.Drawing.Size(664, 119);
+            this.dataGridKundenliste.Size = new System.Drawing.Size(678, 119);
             this.dataGridKundenliste.TabIndex = 0;
-            this.dataGridKundenliste.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridKundenliste_CellContentClick);
             this.dataGridKundenliste.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridKundenliste_CellDoubleClick);
             // 
             // kundenIDDataGridViewTextBoxColumn
@@ -2142,42 +2151,11 @@
             // 
             this.bestellungenTableAdapter2.ClearBeforeFill = true;
             // 
-            // buttonKundeHinzufügen
+            // bestellIDDataGridViewTextBoxColumn
             // 
-            this.buttonKundeHinzufügen.Location = new System.Drawing.Point(103, 123);
-            this.buttonKundeHinzufügen.Name = "buttonKundeHinzufügen";
-            this.buttonKundeHinzufügen.Size = new System.Drawing.Size(80, 23);
-            this.buttonKundeHinzufügen.TabIndex = 15;
-            this.buttonKundeHinzufügen.Text = "hinzufügen";
-            this.buttonKundeHinzufügen.UseVisualStyleBackColor = true;
-            this.buttonKundeHinzufügen.Click += new System.EventHandler(this.buttonKundeHinzufuegen_Click);
-            // 
-            // labelWarenkorb
-            // 
-            this.labelWarenkorb.AutoSize = true;
-            this.labelWarenkorb.Location = new System.Drawing.Point(338, 16);
-            this.labelWarenkorb.Name = "labelWarenkorb";
-            this.labelWarenkorb.Size = new System.Drawing.Size(127, 13);
-            this.labelWarenkorb.TabIndex = 25;
-            this.labelWarenkorb.Text = "ProduktID - Produktname";
-            // 
-            // labelGesamtpreis
-            // 
-            this.labelGesamtpreis.AutoSize = true;
-            this.labelGesamtpreis.Location = new System.Drawing.Point(17, 135);
-            this.labelGesamtpreis.Name = "labelGesamtpreis";
-            this.labelGesamtpreis.Size = new System.Drawing.Size(69, 13);
-            this.labelGesamtpreis.TabIndex = 26;
-            this.labelGesamtpreis.Text = "Gesamt-Preis";
-            // 
-            // buttonBestellen
-            // 
-            this.buttonBestellen.Location = new System.Drawing.Point(20, 161);
-            this.buttonBestellen.Name = "buttonBestellen";
-            this.buttonBestellen.Size = new System.Drawing.Size(287, 93);
-            this.buttonBestellen.TabIndex = 27;
-            this.buttonBestellen.Text = "Bestellen";
-            this.buttonBestellen.Click += new System.EventHandler(this.buttonBestellen_Click);
+            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
             // 
             // KundenID
             // 
@@ -2197,32 +2175,6 @@
             this.Abholzeit.HeaderText = "Abholzeit";
             this.Abholzeit.Name = "Abholzeit";
             // 
-            // bestellIDDataGridViewTextBoxColumn
-            // 
-            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
-            // 
-            // abholdatumDataGridViewTextBoxColumn
-            // 
-            this.abholdatumDataGridViewTextBoxColumn.DataPropertyName = "Abholdatum";
-            this.abholdatumDataGridViewTextBoxColumn.HeaderText = "Abholdatum";
-            this.abholdatumDataGridViewTextBoxColumn.Name = "abholdatumDataGridViewTextBoxColumn";
-            // 
-            // abholzeitDataGridViewTextBoxColumn
-            // 
-            this.abholzeitDataGridViewTextBoxColumn.DataPropertyName = "Abholzeit";
-            this.abholzeitDataGridViewTextBoxColumn.HeaderText = "Abholzeit";
-            this.abholzeitDataGridViewTextBoxColumn.Name = "abholzeitDataGridViewTextBoxColumn";
-            // 
-            // buttonAenderungProduktliste
-            // 
-            this.buttonAenderungProduktliste.Location = new System.Drawing.Point(105, 216);
-            this.buttonAenderungProduktliste.Name = "buttonAenderungProduktliste";
-            this.buttonAenderungProduktliste.Size = new System.Drawing.Size(191, 38);
-            this.buttonAenderungProduktliste.TabIndex = 28;
-            this.buttonAenderungProduktliste.Text = "Änderung an Produktliste speichern";
-            // 
             // baeckerei40
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2236,7 +2188,6 @@
             this.Text = "Bäckerei 4.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.baeckerei40_FormClosing);
             this.Load += new System.EventHandler(this.baeckerei40_Load);
-            this.tabPageControlling.ResumeLayout(false);
             this.tabPageRohstoffe.ResumeLayout(false);
             this.panelRez.ResumeLayout(false);
             this.panelRez.PerformLayout();
@@ -2299,9 +2250,6 @@
         #endregion
         private System.Windows.Forms.Label labelBenutzer;
         private System.Windows.Forms.TabPage tabPageControlling;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.TabPage tabPageRohstoffe;
         private System.Windows.Forms.GroupBox panelRez;
         private System.Windows.Forms.GroupBox groupBox13;
@@ -2512,17 +2460,15 @@
         private System.Windows.Forms.TextBox Kom_GPreis;
         private System.Windows.Forms.TextBox tb_BestellID;
         private System.Windows.Forms.Panel panelKom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn KundenID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Abholdatum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Abholzeit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bestellIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abholdatumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abholzeitDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button buttonBestellen;
         private System.Windows.Forms.Label labelGesamtpreis;
         private System.Windows.Forms.Label labelWarenkorb;
         private System.Windows.Forms.Button buttonKundeHinzufügen;
         private System.Windows.Forms.Button buttonAenderungProduktliste;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bestellIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn KundenID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Abholdatum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Abholzeit;
     }
 }
 

@@ -14,7 +14,10 @@ namespace baeckerei40_forms
 {
     public partial class baeckerei40 : Form
     {
+        //Klassendeklarationen
         List<Produkt> Warenkorb = new List<Produkt>(); // Warenkorb
+        int AusgewaehlterKunde;
+        int BestellID;
 
         public baeckerei40(Mitarbeiter m)
         {
@@ -48,7 +51,7 @@ namespace baeckerei40_forms
             Environment.Exit(0);
         }
 
-        //#######################################- Tab Bestellung -#########################################
+
         // Initialisierung der DB Adapter
         private void baeckerei40_Load(object sender, EventArgs e)
         {
@@ -71,14 +74,17 @@ namespace baeckerei40_forms
             panelRez.Enabled = false;
             panelKom.Enabled = false;
         }
+        //#######################################- Tab Bestellung -#########################################
 
         private void buttonKundeHinzufuegen_Click(object sender, EventArgs e)
         {
             try
             {
+                AusgewaehlterKunde = this.kundenTableAdapter.MaxKundenID(baeckerei40DataSet.Kunden);
+                textBoxKundennummer.Text = AusgewaehlterKunde.ToString();
                 this.kundenTableAdapter.Insert(textBoxVorname.Text, textBoxNachname.Text, textBoxTelefonnummer.Text, "", "", "", "");
                 this.kundenTableAdapter.Fill(this.baeckerei40DataSet.Kunden);
-                //textBoxKundennummer.Text = dataGridKundenliste.Rows[kundenTableAdapter.Ku].Cells[0].Value.ToString();
+                
             }
             catch (Exception ex)
             {
@@ -92,9 +98,10 @@ namespace baeckerei40_forms
             textBoxVorname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[1].Value.ToString();
             textBoxNachname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBoxTelefonnummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[3].Value.ToString();
+            AusgewaehlterKunde = e.RowIndex;
         }
 
-        private void buttonBearbeiten_Click(object sender, EventArgs e)
+        private void buttonKundeBearbeiten_Click(object sender, EventArgs e)
         {
             try
             {
@@ -102,6 +109,7 @@ namespace baeckerei40_forms
                 this.dataGridKundenliste.EndEdit();
                 this.kundenTableAdapter.Update(this.baeckerei40DataSet.Kunden);
                 MessageBox.Show("Update successful");
+                dataGridKundenliste.Update();
             }
             catch (System.Exception ex)
             {
@@ -109,9 +117,13 @@ namespace baeckerei40_forms
             }
         }
 
-        private void dataGridKundenliste_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Clickevent für die Produktliste
+        private void buttonAenderungProduktliste_Click(object sender, EventArgs e)
         {
-
+            this.Validate();
+            this.dataGridViewProduktliste.EndEdit();
+            this.produkteTableAdapter.Update(this.baeckerei40DataSet.Produkte);
+            MessageBox.Show("Update successful");
         }
 
         //Clickevent für die Bestellliste
@@ -149,7 +161,7 @@ namespace baeckerei40_forms
                 {
                     gesamtpreis += x.ProduktPreis;
                 }
-                labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString();
+                labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString() + " €";
             }
             catch (Exception ex)
             {
@@ -158,9 +170,9 @@ namespace baeckerei40_forms
         }
 
 
-        private void buttonBestellen_Click(object sender, EventArgs e)
+        private void dataGridViewdataGridViewProduktliste_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            buttonWarenkorbHinzufuegen_Click(sender, e);
         }
 
         private void buttonWarenkorbEntfernen_Click(object sender, EventArgs e)
@@ -169,21 +181,46 @@ namespace baeckerei40_forms
             {
                 this.listBoxWarenkorb.Items.RemoveAt(this.listBoxWarenkorb.SelectedIndex);
                 this.Warenkorb.RemoveAt(this.listBoxWarenkorb.SelectedIndex + 1);
-
                 double gesamtpreis = 0;
-
                 foreach (Produkt x in Warenkorb)
                 {
                     gesamtpreis = gesamtpreis + x.ProduktPreis;
                 }
+               labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString() + " €";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Kein Produkt zum Entfernen ausgewählt. \n" + ex);
+            }
+        }
 
-                labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString();
+        // Klickevent für den Bestellbutton
+        private void buttonBestellen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BestellID = this.bestellungenTableAdapter.MaxBestellID(baeckerei40DataSet.Bestellungen);
+                textBoxBestellID.Text = BestellID.ToString();
+                this.bestellungenTableAdapter.Insert(int.Parse(textBoxKundennummer.Text), dateTimePickerAbholdatum.Value.ToString(), dateTimePickerAbholzeit.Value.ToString());
+                bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
+                foreach (Produkt p in Warenkorb)
+                {
+                    this.bestellungEnthaeltTableAdapter.Insert(int.Parse(textBoxBestellID.Text),p.ProduktID,1);
+                    this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kein Produkt ausgewählt. \n" + ex);
+                MessageBox.Show("Bestellung fehlgeschlagen. \n" + ex);
             }
+        }
+
+        //#######################################-Tab Produktion-#########################################
+
+        private void buttonProduktionSpeichern_Click(object sender, EventArgs e)
+        {
+
         }
 
         //#######################################-Tab Lager-#########################################
@@ -300,7 +337,7 @@ namespace baeckerei40_forms
             }
         }
 
-        
+
         private void RezBearb_Click(object sender, EventArgs e)
         {
 
@@ -347,7 +384,7 @@ namespace baeckerei40_forms
         // Taschenrechner zum Berechnen des Gesamtpreises
         double ersterWert;
         string operation;
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -455,7 +492,7 @@ namespace baeckerei40_forms
             textBox_anzeige.Text = null;
         }
 
-    
+
         //Hinzufügen einer Checkbox für Warenausgabe
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -484,6 +521,7 @@ namespace baeckerei40_forms
                 bestellungenBindingSource.ResetBindings(false);
             }
         }
+
     }
-}   
+}
 

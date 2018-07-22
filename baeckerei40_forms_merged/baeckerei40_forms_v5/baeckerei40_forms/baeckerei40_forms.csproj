@@ -145,6 +145,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>baeckerei40DataSet7.xsd</DependentUpon>
     </Compile>
+    <Compile Include="baeckerei40DataSet8.cs">
+      <DependentUpon>baeckerei40DataSet8.xsd</DependentUpon>
+    </Compile>
     <Compile Include="baeckerei40DataSet8.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

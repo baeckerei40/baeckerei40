@@ -62,3 +62,14 @@ E:\win_git\baeckerei40\baeckerei40_forms_v5\baeckerei40_forms_v5\baeckerei40_for
 E:\win_git\baeckerei40\baeckerei40_forms_v5\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.Login.resources
 E:\win_git\baeckerei40\baeckerei40_forms_v5\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.Properties.Resources.resources
 E:\win_git\baeckerei40\baeckerei40_forms_v5\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.csproj.GenerateResource.Cache
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\bin\Debug\baeckerei40_forms.exe.config
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.exe
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.pdb
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.csprojResolveAssemblyReference.cache
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.baeckerei40.resources
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.Login.resources
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.Properties.Resources.resources
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\obj\Debug\baeckerei40_forms.csproj.GenerateResource.Cache
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\bin\Debug\baeckerei40.mdb
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\bin\Debug\baeckerei40_forms.exe
+E:\win_git\baeckerei40\baeckerei40_forms_merged\baeckerei40_forms_v5\baeckerei40_forms\bin\Debug\baeckerei40_forms.pdb
