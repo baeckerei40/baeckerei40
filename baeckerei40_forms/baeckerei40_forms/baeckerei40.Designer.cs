@@ -193,7 +193,7 @@
             this.KundenID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholdatum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Abholzeit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bestellungenPodukteInBestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.buttonBestelllisteSpeichern = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -235,6 +235,7 @@
             this.labelNachname = new System.Windows.Forms.Label();
             this.textBoxVorname = new System.Windows.Forms.TextBox();
             this.labelVorname = new System.Windows.Forms.Label();
+            this.bestellungenPodukteInBestellungenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlWrapper = new System.Windows.Forms.TabControl();
             this.kundenTableAdapter = new baeckerei40_forms.baeckerei40DataSetTableAdapters.KundenTableAdapter();
             this.produkteTableAdapter = new baeckerei40_forms.baeckerei40DataSetTableAdapters.ProdukteTableAdapter();
@@ -248,7 +249,6 @@
             this.bestellungenTableAdapter1 = new baeckerei40_forms.baeckerei40DataSet8TableAdapters.BestellungenTableAdapter();
             this.bestellungEnthaeltTableAdapter1 = new baeckerei40_forms.baeckerei40DataSet9TableAdapters.BestellungEnthaeltTableAdapter();
             this.bestellungenTableAdapter2 = new baeckerei40_forms.baeckerei40DataSet10TableAdapters.BestellungenTableAdapter();
-            this.bestellIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPageRohstoffe.SuspendLayout();
             this.panelRez.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rezeptverwaltungBindingSource)).BeginInit();
@@ -286,7 +286,6 @@
             this.tabPageBestellung.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -296,6 +295,7 @@
             this.groupBox18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridKundenliste)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).BeginInit();
             this.tabControlWrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -1726,10 +1726,11 @@
             this.Abholzeit.HeaderText = "Abholzeit";
             this.Abholzeit.Name = "Abholzeit";
             // 
-            // bestellungenPodukteInBestellungenBindingSource
+            // bestellIDDataGridViewTextBoxColumn
             // 
-            this.bestellungenPodukteInBestellungenBindingSource.DataMember = "BestellungenPodukteInBestellungen";
-            this.bestellungenPodukteInBestellungenBindingSource.DataSource = this.bestellungenBindingSource;
+            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
+            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
             // 
             // bestellungenBindingSource
             // 
@@ -2093,6 +2094,11 @@
             this.labelVorname.TabIndex = 0;
             this.labelVorname.Text = "Vorname";
             // 
+            // bestellungenPodukteInBestellungenBindingSource
+            // 
+            this.bestellungenPodukteInBestellungenBindingSource.DataMember = "BestellungenPodukteInBestellungen";
+            this.bestellungenPodukteInBestellungenBindingSource.DataSource = this.bestellungenBindingSource;
+            // 
             // tabControlWrapper
             // 
             this.tabControlWrapper.Controls.Add(this.tabPageBestellung);
@@ -2156,12 +2162,6 @@
             // 
             this.bestellungenTableAdapter2.ClearBeforeFill = true;
             // 
-            // bestellIDDataGridViewTextBoxColumn
-            // 
-            this.bestellIDDataGridViewTextBoxColumn.DataPropertyName = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.HeaderText = "BestellID";
-            this.bestellIDDataGridViewTextBoxColumn.Name = "bestellIDDataGridViewTextBoxColumn";
-            // 
             // baeckerei40
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2172,7 +2172,7 @@
             this.MaximizeBox = false;
             this.Name = "baeckerei40";
             this.ShowInTaskbar = false;
-            this.Text = "Bäckerei 4.0";
+            this.Text = "Bäckerei 4.0 - Gruppe 3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.baeckerei40_FormClosing);
             this.Load += new System.EventHandler(this.baeckerei40_Load);
             this.tabPageRohstoffe.ResumeLayout(false);
@@ -2216,7 +2216,6 @@
             this.tabPageBestellung.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBestellliste)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bestellungenBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -2228,6 +2227,7 @@
             this.groupBox18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridKundenliste)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kundenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bestellungenPodukteInBestellungenBindingSource)).EndInit();
             this.tabControlWrapper.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.baeckerei40DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
