@@ -80,6 +80,84 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>baeckerei40DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="baeckerei40DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet10.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet10.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet12.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet12.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet13.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet13.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet14.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet14.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet15.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet15.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet7.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet8.cs">
+      <DependentUpon>baeckerei40DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet8.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet8.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="baeckerei40DataSet9.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>baeckerei40DataSet9.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Bestellung.cs" />
     <Compile Include="Kunde.cs" />
     <Compile Include="Login.cs">
@@ -94,7 +172,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rechnung.cs" />
-    <Compile Include="Rezept.cs" />
     <Compile Include="Rohstoff.cs" />
     <Compile Include="Rolle.cs" />
     <EmbeddedResource Include="baeckerei40.resx">
@@ -122,6 +199,171 @@
     </None>
     <None Include="baeckerei40DataSet.xss">
       <DependentUpon>baeckerei40DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet1.xsc">
+      <DependentUpon>baeckerei40DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet1.xss">
+      <DependentUpon>baeckerei40DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet10.xsc">
+      <DependentUpon>baeckerei40DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet10.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet10.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet10.xss">
+      <DependentUpon>baeckerei40DataSet10.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet11.xsc">
+      <DependentUpon>baeckerei40DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet11.xss">
+      <DependentUpon>baeckerei40DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet12.xsc">
+      <DependentUpon>baeckerei40DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet12.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet12.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet12.xss">
+      <DependentUpon>baeckerei40DataSet12.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet13.xsc">
+      <DependentUpon>baeckerei40DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet13.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet13.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet13.xss">
+      <DependentUpon>baeckerei40DataSet13.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet14.xsc">
+      <DependentUpon>baeckerei40DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet14.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet14.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet14.xss">
+      <DependentUpon>baeckerei40DataSet14.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet15.xsc">
+      <DependentUpon>baeckerei40DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet15.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet15.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet15.xss">
+      <DependentUpon>baeckerei40DataSet15.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet2.xsc">
+      <DependentUpon>baeckerei40DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet2.xss">
+      <DependentUpon>baeckerei40DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet3.xsc">
+      <DependentUpon>baeckerei40DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet3.xss">
+      <DependentUpon>baeckerei40DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet4.xsc">
+      <DependentUpon>baeckerei40DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet4.xss">
+      <DependentUpon>baeckerei40DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet5.xsc">
+      <DependentUpon>baeckerei40DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet5.xss">
+      <DependentUpon>baeckerei40DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet6.xsc">
+      <DependentUpon>baeckerei40DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet6.xss">
+      <DependentUpon>baeckerei40DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet7.xsc">
+      <DependentUpon>baeckerei40DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet7.xss">
+      <DependentUpon>baeckerei40DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet8.xsc">
+      <DependentUpon>baeckerei40DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet8.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet8.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet8.xss">
+      <DependentUpon>baeckerei40DataSet8.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet9.xsc">
+      <DependentUpon>baeckerei40DataSet9.xsd</DependentUpon>
+    </None>
+    <None Include="baeckerei40DataSet9.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>baeckerei40DataSet9.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="baeckerei40DataSet9.xss">
+      <DependentUpon>baeckerei40DataSet9.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Kunde.datasource" />
     <None Include="Properties\Settings.settings">

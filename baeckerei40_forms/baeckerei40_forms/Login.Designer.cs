@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.LabelUser = new System.Windows.Forms.Label();
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.richTextBoxBeschreibung = new System.Windows.Forms.RichTextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
             // 
-            this.buttonLogin.Location = new System.Drawing.Point(91, 210);
+            this.buttonLogin.Location = new System.Drawing.Point(148, 340);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(75, 23);
             this.buttonLogin.TabIndex = 0;
@@ -49,7 +52,7 @@
             // LabelUser
             // 
             this.LabelUser.AutoSize = true;
-            this.LabelUser.Location = new System.Drawing.Point(24, 163);
+            this.LabelUser.Location = new System.Drawing.Point(81, 293);
             this.LabelUser.Name = "LabelUser";
             this.LabelUser.Size = new System.Drawing.Size(49, 13);
             this.LabelUser.TabIndex = 1;
@@ -57,7 +60,7 @@
             // 
             // textBoxUser
             // 
-            this.textBoxUser.Location = new System.Drawing.Point(80, 159);
+            this.textBoxUser.Location = new System.Drawing.Point(137, 289);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(100, 20);
             this.textBoxUser.TabIndex = 2;
@@ -66,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 189);
+            this.label2.Location = new System.Drawing.Point(81, 319);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 3;
@@ -74,38 +77,49 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(80, 186);
+            this.textBoxPassword.Location = new System.Drawing.Point(137, 316);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(100, 20);
             this.textBoxPassword.TabIndex = 4;
             // 
             // richTextBoxBeschreibung
             // 
-            this.richTextBoxBeschreibung.BackColor = System.Drawing.SystemColors.Menu;
+            this.richTextBoxBeschreibung.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBoxBeschreibung.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxBeschreibung.Location = new System.Drawing.Point(12, 12);
+            this.richTextBoxBeschreibung.Location = new System.Drawing.Point(44, 141);
             this.richTextBoxBeschreibung.Name = "richTextBoxBeschreibung";
             this.richTextBoxBeschreibung.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBoxBeschreibung.Size = new System.Drawing.Size(286, 147);
-            this.richTextBoxBeschreibung.TabIndex = 5;
-            this.richTextBoxBeschreibung.Text = "Beschreibung:  \nSie können sich als Manager, \nVertieb oder Produktion einloggen.\n" +
-    "\nJe nach Benutzer sind einige Tabs deaktiviert.\n\nEs wird kein Passwort benötigt." +
-    "";
-            this.richTextBoxBeschreibung.TextChanged += new System.EventHandler(this.richTextBoxBeschreibung_TextChanged);
+            this.richTextBoxBeschreibung.Size = new System.Drawing.Size(206, 131);
+            this.richTextBoxBeschreibung.TabIndex = 6;
+            this.richTextBoxBeschreibung.Text = "Beschreibung:  \n\nLogin als \nManager,\nVertieb \noder Bäcker\nmöglich.\n\nJe nach Benut" +
+    "zer sind einige Tabs deaktiviert.\n\nEs wird kein Passwort benötigt.";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(194, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(552, 465);
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 267);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(758, 534);
             this.Controls.Add(this.richTextBoxBeschreibung);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxUser);
             this.Controls.Add(this.LabelUser);
             this.Controls.Add(this.buttonLogin);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
-            this.Text = "Login";
+            this.Text = "Bäckerei 4.0 - Login";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,5 +133,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.RichTextBox richTextBoxBeschreibung;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
