@@ -12,7 +12,7 @@ namespace baeckerei40_forms
         public String Produktname{ get; set; }
         public Double ProduktPreis { get; set; }
         public Boolean produziert { get; set; }
-        
+        public int ProduktAnzahl { get; set; }
 
     }
 }

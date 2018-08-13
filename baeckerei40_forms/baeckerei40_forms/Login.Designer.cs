@@ -87,10 +87,10 @@
             // 
             this.richTextBoxBeschreibung.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBoxBeschreibung.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxBeschreibung.Location = new System.Drawing.Point(44, 141);
+            this.richTextBoxBeschreibung.Location = new System.Drawing.Point(49, 75);
             this.richTextBoxBeschreibung.Name = "richTextBoxBeschreibung";
             this.richTextBoxBeschreibung.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.richTextBoxBeschreibung.Size = new System.Drawing.Size(206, 131);
+            this.richTextBoxBeschreibung.Size = new System.Drawing.Size(199, 169);
             this.richTextBoxBeschreibung.TabIndex = 6;
             this.richTextBoxBeschreibung.Text = "Beschreibung:  \n\nLogin als \nManager,\nVertieb \noder Bäcker\nmöglich.\n\nJe nach Benut" +
     "zer sind einige Tabs deaktiviert.\n\nEs wird kein Passwort benötigt.";
@@ -118,7 +118,7 @@
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Login";
-            this.Text = "Bäckerei 4.0 - Login";
+            this.Text = "Bäckerei 4.0 - Gruppe 3 - Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

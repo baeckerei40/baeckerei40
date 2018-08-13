@@ -14,14 +14,17 @@ namespace baeckerei40_forms
 {
     public partial class baeckerei40 : Form
     {
-        //Klassendeklarationen
-        List<Produkt> Warenkorb = new List<Produkt>(); // Warenkorb
+        //globale Zuweisungen
+        List<Produkt> Warenkorb = new List<Produkt>();
         int AusgewaehlterKunde;
 
         public baeckerei40(Mitarbeiter m)
         {
             InitializeComponent();
+
+            //Zeige den Benutzername im dafür vorgesehenen Label an.
             labelBenutzer.Text = "Benutzer: " + m.Benutzername;
+
             //Zeige Tabs je nach Berechtigung
             switch (m.Benutzername)
             {
@@ -42,10 +45,9 @@ namespace baeckerei40_forms
                 default:
                     break;
             }
-
-
         }
 
+        // Exit-Event
         private void baeckerei40_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Alle Forms beenden, wenn auf Schließen geklickt wird (auch Login)
@@ -77,6 +79,7 @@ namespace baeckerei40_forms
         }
         //#######################################- Tab Bestellung -#########################################
 
+        // Clickevent für den Button "Kunde hinzufügen"
         private void buttonKundeHinzufuegen_Click(object sender, EventArgs e)
         {
             try
@@ -92,15 +95,7 @@ namespace baeckerei40_forms
             }
         }
 
-        private void dataGridKundenliste_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBoxKundennummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[0].Value.ToString();
-            textBoxVorname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[1].Value.ToString();
-            textBoxNachname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[2].Value.ToString();
-            textBoxTelefonnummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[3].Value.ToString();
-            AusgewaehlterKunde = e.RowIndex;
-        }
-
+        // Clickevent für den Button "Kunde bearbeiten"
         private void buttonKundeBearbeiten_Click(object sender, EventArgs e)
         {
             try
@@ -117,7 +112,18 @@ namespace baeckerei40_forms
             }
         }
 
-        //Clickevent für die Produktliste
+        // Clickevent für das Kunden DataGrid 
+        private void dataGridKundenliste_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Wähle den Kunden aus, der in der angeklickten (Doppelklick) Zeile steht
+            textBoxKundennummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[0].Value.ToString();
+            textBoxVorname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[1].Value.ToString();
+            textBoxNachname.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[2].Value.ToString();
+            textBoxTelefonnummer.Text = dataGridKundenliste.Rows[e.RowIndex].Cells[3].Value.ToString();
+            AusgewaehlterKunde = e.RowIndex;
+        }
+
+        // Clickevent für die Produktliste
         private void buttonAenderungProduktliste_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -126,7 +132,7 @@ namespace baeckerei40_forms
             MessageBox.Show("Änderung erfolgreich!");
         }
 
-        //Clickevent für die Bestellliste
+        // Clickevent für die Bestellliste
         private void buttonBestelllisteSpeichern_Click(object sender, EventArgs e)
         {
             try
@@ -147,19 +153,23 @@ namespace baeckerei40_forms
         {
             try
             {
+                // Neues Produktobjekt anlegen
                 Produkt p = new Produkt();
+                // Eigenschaften des ausgewählten Produkts bestimmen
                 var cellIndex = dataGridViewProduktliste.SelectedCells[0].RowIndex;
                 var cellCollection = dataGridViewProduktliste.Rows[cellIndex].Cells[0];
-
                 p.ProduktID = (int)dataGridViewProduktliste.Rows[cellIndex].Cells[0].Value;
                 p.Produktname = (string)dataGridViewProduktliste.Rows[cellIndex].Cells[1].Value;
                 p.ProduktPreis = Double.Parse(dataGridViewProduktliste.Rows[cellIndex].Cells[2].Value.ToString());
-                this.listBoxWarenkorb.Items.Add(p.ProduktID.ToString() + " - " + p.Produktname.ToString());
+                // Anzahl der Produkte (Combobox) berücksichtigen
+                p.ProduktAnzahl = int.Parse(comboBoxWarenkorbAnzahl.Text);
+
+                this.listBoxWarenkorb.Items.Add("Prod.-ID: " + p.ProduktID.ToString() + " - Prod.-Name: " + p.Produktname.ToString() + " - Anzahl: " + p.ProduktAnzahl.ToString());
                 this.Warenkorb.Add(p);
                 double gesamtpreis = 0;
                 foreach (Produkt x in this.Warenkorb)
                 {
-                    gesamtpreis += x.ProduktPreis;
+                    gesamtpreis = gesamtpreis + ( x.ProduktPreis * x.ProduktAnzahl );
                 }
                 labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString() + " €";
             }
@@ -169,12 +179,13 @@ namespace baeckerei40_forms
             }
         }
 
-
+        // Clickevent für das Produktliste DataGrid (füge bei Doppelklick auch ein Produkt zum Warenkorb hinzu).
         private void dataGridViewdataGridViewProduktliste_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             buttonWarenkorbHinzufuegen_Click(sender, e);
         }
 
+        // Klickevent für den ">>"-Button (Entferne Elemente aus dem Warenkorb)
         private void buttonWarenkorbEntfernen_Click(object sender, EventArgs e)
         {
             try
@@ -182,9 +193,9 @@ namespace baeckerei40_forms
                 this.listBoxWarenkorb.Items.RemoveAt(this.listBoxWarenkorb.SelectedIndex);
                 this.Warenkorb.RemoveAt(this.listBoxWarenkorb.SelectedIndex + 1);
                 double gesamtpreis = 0;
-                foreach (Produkt p in Warenkorb)
+                foreach (Produkt x in this.Warenkorb)
                 {
-                    gesamtpreis = gesamtpreis + p.ProduktPreis;
+                    gesamtpreis = gesamtpreis + (x.ProduktPreis * x.ProduktAnzahl);
                 }
                labelGesamtpreis.Text = "Gesamt-Preis: " + gesamtpreis.ToString() + " €";
             }
@@ -201,22 +212,27 @@ namespace baeckerei40_forms
             {
                 if(textBoxKundennummer.Text == "")
                 {
+                    // Fehler, falls kein Kunde ausgewählt
                     MessageBox.Show("Kein Kunde ausgewählt! \n");
                 } else {
+                    // Tabellen füllen
                     this.bestellungenTableAdapter.Insert(int.Parse(textBoxKundennummer.Text), dateTimePickerAbholdatum.Value, dateTimePickerAbholzeit.Value.ToString());
                     bestellungenTableAdapter.ClearBeforeFill = true;
                     bestellungenTableAdapter.Fill(this.baeckerei40DataSet.Bestellungen);
                     int BestellID = (int)bestellungenTableAdapter.MaxBestellID();
-                    BestellID += 1;
                     foreach (Produkt p in Warenkorb)
                     {
-                        this.bestellungEnthaeltTableAdapter.Insert(BestellID,p.ProduktID,1);
+                        this.bestellungEnthaeltTableAdapter.Insert(BestellID,p.ProduktID,p.ProduktAnzahl);
                         this.bestellungEnthaeltTableAdapter.Fill(this.baeckerei40DataSet.BestellungEnthaelt);
                     }
                     this.dataGridViewBestellliste.Update();
                     MessageBox.Show("Bestellung erforgreich erstellt. \n");
+
+                    // Warenkorb resetten
                     this.Warenkorb.Clear();
                     this.listBoxWarenkorb.Items.Clear();
+
+                    // DataGrid neu laden, damit die Änderungen angezeigt werden.
                     bestellungenBindingSource.DataSource = baeckerei40DataSet.Bestellungen;
                     bestellungenBindingSource.ResetBindings(true);
                     this.dataGridViewBestellliste.Refresh();
@@ -544,11 +560,6 @@ namespace baeckerei40_forms
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 bestellungenBindingSource.ResetBindings(false);
             }
-        }
-
-        private void bestellungenBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
